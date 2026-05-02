@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Where is it hot — ClimaHealth / GHHIN prototype</title>
+<meta name="description" content="Live global view of temperature extremes, computed from GFS analysis and forecast data with ERA5 1991–2020 climatology context." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/suncalc@1.9.0/suncalc.js"></script>
+
+<style>
+  :root {
+    --bg: #f6f3ee;
+    --bg-panel: #fffdf8;
+    --ink: #1a1916;
+    --ink-soft: #5a564e;
+    --ink-faint: #8a8479;
+    --rule: #d8d3c8;
+    --rule-soft: #ebe6db;
+    --accent: #b8351a;          /* deep terracotta */
+    --accent-soft: #e9b9ad;
+    --night: rgba(20, 18, 35, 0.42);
+    /* Sequential heat ramp (perceptually-tuned, viridis-adjacent but warmer) */
+    --c-cold: #2c5d8f;
+    --c-cool: #6a9bc4;
+    --c-mild: #c7c4ad;
+    --c-warm: #e8a572;
+    --c-hot:  #c95a3a;
+    --c-extreme: #6b1e0e;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; }
+  body {
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    background: var(--bg);
+    font-size: 14px;
+    line-height: 1.5;
+    overflow: hidden;
+  }
+
+  /* ============ Layout ============ */
+  .app {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    grid-template-rows: 100vh;
+    height: 100vh;
+  }
+  @media (max-width: 900px) {
+    .app { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+    .sidebar { max-height: 45vh; overflow-y: auto; }
+  }
+
+  /* ============ Sidebar ============ */
+  .sidebar {
+    background: var(--bg-panel);
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .masthead {
+    padding: 22px 24px 18px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+    font-weight: 500;
+  }
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+    font-variation-settings: "opsz" 96;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  .subtitle {
+    color: var(--ink-soft);
+    font-size: 13px;
+    margin: 0;
+  }
+
+  .controls {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .control-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 8px;
+    display: block;
+  }
+  .metric-options {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .metric-option {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 9px 10px;
+    border: none;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.15s;
+    font-family: inherit;
+    color: var(--ink);
+    border-left: 2px solid transparent;
+  }
+  .metric-option:hover { background: var(--rule-soft); }
+  .metric-option[aria-pressed="true"] {
+    background: #fff;
+    border-left-color: var(--accent);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .metric-option .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    width: 18px;
+    flex-shrink: 0;
+  }
+  .metric-option .name {
+    font-size: 13.5px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .metric-option .desc {
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    margin-top: 2px;
+    line-height: 1.35;
+  }
+
+  /* ============ Leaderboard ============ */
+  .leaderboard {
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px 0 20px;
+  }
+  .leaderboard-header {
+    padding: 8px 24px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .leaderboard-header h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 15px;
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+  .leaderboard-header .count {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+  }
+  .row {
+    display: grid;
+    grid-template-columns: 22px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 24px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--rule-soft);
+    transition: background 0.12s;
+  }
+  .row:hover { background: var(--rule-soft); }
+  .row .rank {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    text-align: right;
+  }
+  .row .place {
+    min-width: 0;
+  }
+  .row .place-name {
+    font-weight: 500;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .row .place-meta {
+    font-size: 11px;
+    color: var(--ink-faint);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .row .value {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 18px;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+  .row .value-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faint);
+    text-align: right;
+  }
+
+  /* ============ Footer ============ */
+  .colophon {
+    padding: 12px 24px 14px;
+    border-top: 1px solid var(--rule);
+    font-size: 10.5px;
+    color: var(--ink-faint);
+    line-height: 1.45;
+    background: var(--bg-panel);
+  }
+  .colophon a { color: var(--ink-soft); }
+  .synthetic-banner {
+    background: #fff7e6;
+    color: #7a5500;
+    padding: 6px 24px;
+    font-size: 11px;
+    border-bottom: 1px solid #f0d9a8;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.02em;
+  }
+
+  /* ============ Map ============ */
+  .map-wrap {
+    position: relative;
+    background: #e9e5dc;
+  }
+  #map {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* Tweak MapLibre defaults for editorial look */
+  .maplibregl-ctrl-attrib {
+    background: rgba(255, 253, 248, 0.85) !important;
+    font-family: 'IBM Plex Mono', monospace !important;
+    font-size: 10px !important;
+  }
+
+  /* Custom legend overlay */
+  .legend {
+    position: absolute;
+    bottom: 28px;
+    left: 24px;
+    background: var(--bg-panel);
+    padding: 14px 16px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    max-width: 280px;
+    z-index: 5;
+  }
+  .legend-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0 0 8px;
+  }
+  .legend-bar {
+    height: 10px;
+    border-radius: 1px;
+    margin-bottom: 4px;
+  }
+  .legend-ticks {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+  }
+  .legend-note {
+    font-size: 10.5px;
+    color: var(--ink-faint);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* Time + run readout */
+  .readout {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--bg-panel);
+    padding: 10px 14px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    z-index: 5;
+  }
+  .readout .now {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* Custom popup */
+  .maplibregl-popup-content {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    border-radius: 4px !important;
+    padding: 14px 16px !important;
+    border: 1px solid var(--rule) !important;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1) !important;
+    background: var(--bg-panel) !important;
+    min-width: 200px;
+  }
+  .maplibregl-popup-tip { display: none !important; }
+  .maplibregl-popup-close-button {
+    font-size: 18px !important;
+    padding: 4px 8px !important;
+    color: var(--ink-faint) !important;
+  }
+  .pop h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 2px;
+  }
+  .pop .pop-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+  }
+  .pop .pop-primary {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .pop .pop-primary-label {
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+  .pop .pop-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
+    padding-top: 10px;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .pop .pop-grid dt {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0;
+  }
+  .pop .pop-grid dd {
+    font-size: 13px;
+    margin: 0 0 4px;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+  }
+</style>
+</head>
+
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="masthead">
+      <p class="eyebrow">ClimaHealth × GHHIN — prototype</p>
+      <h1>Where is it <em>hot</em></h1>
+      <p class="subtitle">A live look at global temperature extremes, refreshed every three hours.</p>
+    </div>
+
+    <div id="synthetic-banner" class="synthetic-banner" hidden>
+      Showing synthetic demo data — pipeline not yet connected
+    </div>
+
+    <div class="controls">
+      <span class="control-label">Definition of "hot"</span>
+      <div class="metric-options" role="radiogroup" aria-label="Heat metric">
+        <button class="metric-option" data-metric="current_temp_c" aria-pressed="true">
+          <span class="num">01</span>
+          <span>
+            <div class="name">Current temperature</div>
+            <div class="desc">Latest GFS analysis, 2-metre air temp</div>
+          </span>
+        </button>
+        <button class="metric-option" data-metric="percentile" aria-pressed="false">
+          <span class="num">02</span>
+          <span>
+            <div class="name">Anomaly vs. climatology</div>
+            <div class="desc">Percentile rank against ERA5 1991–2020, 15-day window</div>
+          </span>
+        </button>
+        <button class="metric-option" data-metric="daily_max_c" aria-pressed="false">
+          <span class="num">03</span>
+          <span>
+            <div class="name">Daily maximum</div>
+            <div class="desc">Highest observed or forecast temp in 24 h</div>
+          </span>
+        </button>
+        <button class="metric-option" data-metric="daily_min_c" aria-pressed="false">
+          <span class="num">04</span>
+          <span>
+            <div class="name">Daily minimum</div>
+            <div class="desc">Lowest observed or forecast temp in 24 h</div>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div class="leaderboard">
+      <div class="leaderboard-header">
+        <h2 id="leaderboard-title">Hottest right now</h2>
+        <span class="count" id="leaderboard-count"></span>
+      </div>
+      <div id="leaderboard-rows"></div>
+    </div>
+
+    <div class="colophon">
+      <strong>Data:</strong> NOAA GFS 0.25° (current &amp; forecast) · ECMWF ERA5 (climatology) · GeoNames (cities, CC-BY 4.0).<br>
+      <strong>Cadence:</strong> 3-hourly · <strong>Methodology:</strong> <a href="#methodology">view</a>.
+    </div>
+  </aside>
+
+  <div class="map-wrap">
+    <div id="map"></div>
+    <div class="readout" id="readout">
+      <span class="now" id="now-utc">—</span><br>
+      <span id="model-run">—</span>
+    </div>
+    <div class="legend" id="legend">
+      <div class="legend-title" id="legend-title">Temperature (°C)</div>
+      <div class="legend-bar" id="legend-bar"></div>
+      <div class="legend-ticks" id="legend-ticks"></div>
+      <div class="legend-note" id="legend-note">Circles sized by city population, colored by metric.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// =====================================================================
+// CONFIG: metric definitions, color ramps, formatters
+// =====================================================================
+const METRICS = {
+  current_temp_c: {
+    title: 'Hottest right now',
+    legendTitle: 'Current temperature',
+    unit: '°C',
+    domain: [-20, 50],
+    stops: [
+      [-20, 'var(--c-cold)'],
+      [0,   'var(--c-cool)'],
+      [15,  'var(--c-mild)'],
+      [28,  'var(--c-warm)'],
+      [38,  'var(--c-hot)'],
+      [50,  'var(--c-extreme)']
+    ],
+    fmt: v => `${v.toFixed(1)}°`,
+    sortDesc: true,
+  },
+  percentile: {
+    title: 'Most extreme vs. climatology',
+    legendTitle: 'Percentile vs. 1991–2020',
+    unit: 'pct',
+    domain: [0, 100],
+    stops: [
+      [0,   'var(--c-cold)'],
+      [25,  'var(--c-cool)'],
+      [50,  'var(--c-mild)'],
+      [80,  'var(--c-warm)'],
+      [95,  'var(--c-hot)'],
+      [100, 'var(--c-extreme)']
+    ],
+    fmt: v => `p${v.toFixed(0)}`,
+    sortDesc: true,
+  },
+  daily_max_c: {
+    title: 'Highest daily maximum',
+    legendTitle: 'Daily max temperature',
+    unit: '°C',
+    domain: [-10, 55],
+    stops: [
+      [-10, 'var(--c-cold)'],
+      [10,  'var(--c-cool)'],
+      [22,  'var(--c-mild)'],
+      [32,  'var(--c-warm)'],
+      [42,  'var(--c-hot)'],
+      [55,  'var(--c-extreme)']
+    ],
+    fmt: v => `${v.toFixed(1)}°`,
+    sortDesc: true,
+  },
+  daily_min_c: {
+    title: 'Highest daily minimum',
+    legendTitle: 'Daily min temperature',
+    unit: '°C',
+    domain: [-30, 35],
+    stops: [
+      [-30, 'var(--c-cold)'],
+      [-10, 'var(--c-cool)'],
+      [5,   'var(--c-mild)'],
+      [18,  'var(--c-warm)'],
+      [25,  'var(--c-hot)'],
+      [35,  'var(--c-extreme)']
+    ],
+    fmt: v => `${v.toFixed(1)}°`,
+    sortDesc: true,
+  },
+};
+
+// Resolve CSS var to actual color (needed for MapLibre interpolation expressions
+// because they don't accept var() refs)
+function cssVar(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+function resolveStops(stops) {
+  return stops.map(([v, c]) => [v, c.startsWith('var') ? cssVar(c.slice(4, -1)) : c]);
+}
+
+// =====================================================================
+// MAP INIT
+// =====================================================================
+const map = new maplibregl.Map({
+  container: 'map',
+  style: {
+    version: 8,
+    glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
+    sources: {
+      // Natural Earth via demotiles — neutral, restriction-free for prototype
+      'world': {
+        type: 'geojson',
+        data: 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson'
+      }
+    },
+    layers: [
+      { id: 'bg', type: 'background', paint: { 'background-color': '#e9e5dc' } },
+      {
+        id: 'land',
+        type: 'fill',
+        source: 'world',
+        paint: { 'fill-color': '#f6f3ee', 'fill-outline-color': '#d8d3c8' }
+      }
+    ]
+  },
+  center: [10, 20],
+  zoom: 1.6,
+  minZoom: 1.2,
+  maxZoom: 8,
+  attributionControl: false,
+});
+map.addControl(new maplibregl.AttributionControl({
+  customAttribution: 'Boundaries: Natural Earth · Cities: GeoNames CC-BY 4.0'
+}), 'bottom-right');
+map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
+map.dragRotate.disable();
+map.touchZoomRotate.disableRotation();
+
+// =====================================================================
+// DATA LOAD + RENDER
+// =====================================================================
+let cityData = null;
+let activeMetric = 'current_temp_c';
+
+async function loadData() {
+  const r = await fetch('../data/cities_live.json');
+  cityData = await r.json();
+  if (cityData.metadata?.synthetic) {
+    document.getElementById('synthetic-banner').hidden = false;
+  }
+  document.getElementById('model-run').textContent =
+    cityData.metadata?.model_run ?? `Synthetic · ${cityData.metadata?.climatology_version ?? ''}`;
+  return cityData;
+}
+
+function asGeoJSON(metric) {
+  return {
+    type: 'FeatureCollection',
+    features: cityData.cities
+      .filter(c => c[metric] != null)
+      .map(c => ({
+        type: 'Feature',
+        properties: { ...c, value: c[metric] },
+        geometry: { type: 'Point', coordinates: [c.lon, c.lat] }
+      }))
+  };
+}
+
+function applyMetric(metric) {
+  activeMetric = metric;
+  const def = METRICS[metric];
+  const stops = resolveStops(def.stops);
+  const colorExpr = ['interpolate', ['linear'], ['get', 'value']];
+  for (const [v, c] of stops) colorExpr.push(v, c);
+
+  if (map.getSource('cities')) {
+    map.getSource('cities').setData(asGeoJSON(metric));
+    map.setPaintProperty('city-points', 'circle-color', colorExpr);
+  }
+  renderLeaderboard();
+  renderLegend();
+}
+
+function renderLegend() {
+  const def = METRICS[activeMetric];
+  document.getElementById('legend-title').textContent = def.legendTitle;
+  const stops = def.stops;
+  const colors = stops.map(s => s[1]).join(', ');
+  document.getElementById('legend-bar').style.background =
+    `linear-gradient(to right, ${colors})`;
+  const ticks = document.getElementById('legend-ticks');
+  const min = def.domain[0], max = def.domain[1];
+  const tickVals = [min, min + (max - min) * 0.5, max];
+  ticks.innerHTML = tickVals
+    .map(v => `<span>${activeMetric === 'percentile' ? `p${v}` : `${v}°`}</span>`).join('');
+}
+
+function renderLeaderboard() {
+  const def = METRICS[activeMetric];
+  document.getElementById('leaderboard-title').textContent = def.title;
+  const sorted = [...cityData.cities]
+    .filter(c => c[activeMetric] != null)
+    .sort((a, b) => def.sortDesc ? b[activeMetric] - a[activeMetric] : a[activeMetric] - b[activeMetric])
+    .slice(0, 25);
+  document.getElementById('leaderboard-count').textContent = `top ${sorted.length}`;
+  const wrap = document.getElementById('leaderboard-rows');
+  wrap.innerHTML = sorted.map((c, i) => {
+    let sub = '';
+    if (activeMetric === 'percentile') {
+      sub = `${c.current_temp_c.toFixed(1)}° vs ${c.climatology_mean_c.toFixed(1)}°`;
+    } else if (activeMetric === 'current_temp_c') {
+      const sign = c.anomaly_c >= 0 ? '+' : '';
+      sub = `${sign}${c.anomaly_c.toFixed(1)}° vs normal`;
+    } else if (activeMetric === 'daily_max_c') {
+      sub = `min ${c.daily_min_c.toFixed(1)}°`;
+    } else {
+      sub = `max ${c.daily_max_c.toFixed(1)}°`;
+    }
+    return `
+      <div class="row" data-lat="${c.lat}" data-lon="${c.lon}" data-id="${c.geonames_id}">
+        <div class="rank">${String(i + 1).padStart(2, '0')}</div>
+        <div class="place">
+          <div class="place-name">${c.name}</div>
+          <div class="place-meta">${c.country} · ${c.lat.toFixed(1)}, ${c.lon.toFixed(1)}</div>
+        </div>
+        <div>
+          <div class="value">${def.fmt(c[activeMetric])}</div>
+          <div class="value-sub">${sub}</div>
+        </div>
+      </div>`;
+  }).join('');
+  wrap.querySelectorAll('.row').forEach(row => {
+    row.addEventListener('click', () => {
+      const lat = +row.dataset.lat, lon = +row.dataset.lon;
+      const id = +row.dataset.id;
+      const city = cityData.cities.find(c => c.geonames_id === id);
+      map.flyTo({ center: [lon, lat], zoom: 4.2, duration: 1100, essential: true });
+      showPopup(city);
+    });
+  });
+}
+
+function showPopup(city) {
+  const def = METRICS[activeMetric];
+  const primary = def.fmt(city[activeMetric]);
+  const primaryLabel = def.legendTitle;
+  const anomalySign = city.anomaly_c >= 0 ? '+' : '';
+  const html = `
+    <div class="pop">
+      <h3>${city.name}</h3>
+      <div class="pop-meta">${city.country} · ${city.tz.replace('_', ' ')}</div>
+      <div class="pop-primary">${primary}</div>
+      <div class="pop-primary-label">${primaryLabel}</div>
+      <dl class="pop-grid">
+        <div><dt>Current</dt><dd>${city.current_temp_c.toFixed(1)}°</dd></div>
+        <div><dt>Anomaly</dt><dd>${anomalySign}${city.anomaly_c.toFixed(1)}°</dd></div>
+        <div><dt>Day max</dt><dd>${city.daily_max_c.toFixed(1)}°</dd></div>
+        <div><dt>Day min</dt><dd>${city.daily_min_c.toFixed(1)}°</dd></div>
+        <div><dt>Climatology</dt><dd>${city.climatology_mean_c.toFixed(1)}°</dd></div>
+        <div><dt>P95 normal</dt><dd>${city.climatology_p95_c.toFixed(1)}°</dd></div>
+      </dl>
+    </div>`;
+  new maplibregl.Popup({ offset: 14, closeOnMove: false })
+    .setLngLat([city.lon, city.lat])
+    .setHTML(html)
+    .addTo(map);
+}
+
+// =====================================================================
+// DAY/NIGHT TERMINATOR
+// =====================================================================
+// Computes the polygon of Earth's surface in night, given a UTC time.
+// Uses a parametric solar-position calc (cheap, accurate to ~0.1°).
+function terminatorPolygon(date) {
+  // Sun's subsolar point
+  const julian = date.getTime() / 86400000 + 2440587.5;
+  const T = (julian - 2451545.0) / 36525.0;
+  const L = (280.46646 + 36000.76983 * T) % 360;
+  const g = (357.52911 + 35999.05029 * T) * Math.PI / 180;
+  const lambda = (L + 1.914602 * Math.sin(g) + 0.019993 * Math.sin(2 * g)) * Math.PI / 180;
+  const epsilon = 23.439 * Math.PI / 180;
+  const decl = Math.asin(Math.sin(epsilon) * Math.sin(lambda)) * 180 / Math.PI;
+  // Greenwich Mean Sidereal Time
+  const utHours = date.getUTCHours() + date.getUTCMinutes() / 60 + date.getUTCSeconds() / 3600;
+  const subsolarLon = -15 * (utHours - 12) - 0.0028 * T * 36525; // small correction
+  const sunLat = decl;
+
+  // Build great-circle of points 90° from subsolar — that's the terminator
+  const points = [];
+  for (let bearing = 0; bearing <= 360; bearing += 2) {
+    const p = greatCirclePoint(sunLat, subsolarLon, 90, bearing);
+    points.push(p);
+  }
+  // Wrap into a polygon covering the night side.
+  // Sort by longitude, then close around the pole that's on the night side.
+  points.sort((a, b) => a[0] - b[0]);
+  // Determine which pole is dark (the one whose latitude has the opposite sign of sunLat,
+  // unless we're in polar day/night where both behave specially)
+  const darkPoleLat = sunLat >= 0 ? -90 : 90;
+  const ring = [
+    [-180, darkPoleLat],
+    ...points.filter(p => p[0] >= -180 && p[0] <= 180),
+    [180, darkPoleLat],
+    [-180, darkPoleLat]
+  ];
+  return { type: 'Polygon', coordinates: [ring] };
+}
+
+function greatCirclePoint(lat1, lon1, distDeg, bearingDeg) {
+  const lat1r = lat1 * Math.PI / 180;
+  const lon1r = lon1 * Math.PI / 180;
+  const d = distDeg * Math.PI / 180;
+  const b = bearingDeg * Math.PI / 180;
+  const lat2 = Math.asin(Math.sin(lat1r) * Math.cos(d) + Math.cos(lat1r) * Math.sin(d) * Math.cos(b));
+  const lon2 = lon1r + Math.atan2(
+    Math.sin(b) * Math.sin(d) * Math.cos(lat1r),
+    Math.cos(d) - Math.sin(lat1r) * Math.sin(lat2)
+  );
+  let lonDeg = lon2 * 180 / Math.PI;
+  while (lonDeg > 180) lonDeg -= 360;
+  while (lonDeg < -180) lonDeg += 360;
+  return [lonDeg, lat2 * 180 / Math.PI];
+}
+
+function updateTerminator() {
+  const data = { type: 'Feature', geometry: terminatorPolygon(new Date()), properties: {} };
+  if (map.getSource('night')) {
+    map.getSource('night').setData(data);
+  } else {
+    map.addSource('night', { type: 'geojson', data });
+    map.addLayer({
+      id: 'night-fill',
+      type: 'fill',
+      source: 'night',
+      paint: {
+        'fill-color': cssVar('--night'),
+        'fill-opacity': 0.55
+      }
+    });
+  }
+}
+
+function updateClock() {
+  const now = new Date();
+  const utc = now.toISOString().slice(0, 16).replace('T', ' ') + ' UTC';
+  document.getElementById('now-utc').textContent = utc;
+}
+
+// =====================================================================
+// BOOT
+// =====================================================================
+map.on('load', async () => {
+  await loadData();
+
+  map.addSource('cities', { type: 'geojson', data: asGeoJSON(activeMetric) });
+  map.addLayer({
+    id: 'city-points',
+    type: 'circle',
+    source: 'cities',
+    paint: {
+      'circle-radius': [
+        'interpolate', ['linear'], ['zoom'],
+        1, 4,
+        4, 7,
+        8, 12
+      ],
+      'circle-color': '#000',
+      'circle-stroke-color': '#fffdf8',
+      'circle-stroke-width': 1.2,
+      'circle-opacity': 0.92
+    }
+  });
+
+  // Initial paint
+  applyMetric(activeMetric);
+  updateTerminator();
+  updateClock();
+
+  // Click handlers
+  map.on('click', 'city-points', (e) => {
+    const f = e.features[0];
+    const city = cityData.cities.find(c => c.geonames_id === f.properties.geonames_id);
+    if (city) showPopup(city);
+  });
+  map.on('mouseenter', 'city-points', () => map.getCanvas().style.cursor = 'pointer');
+  map.on('mouseleave', 'city-points', () => map.getCanvas().style.cursor = '');
+
+  // Refresh terminator + clock every minute
+  setInterval(() => { updateTerminator(); updateClock(); }, 60_000);
+});
+
+// Metric switcher
+document.querySelectorAll('.metric-option').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.metric-option').forEach(b =>
+      b.setAttribute('aria-pressed', String(b === btn)));
+    applyMetric(btn.dataset.metric);
+  });
+});
+</script>
+</body>
+</html>

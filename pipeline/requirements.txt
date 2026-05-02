@@ -1,0 +1,6 @@
+numpy>=1.26,<2.3
+pandas>=2.1,<2.3
+requests>=2.31,<3
+xarray>=2024.1
+cfgrib>=0.9.10
+pyarrow>=14.0
