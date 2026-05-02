@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "generated_at_utc": "2026-05-02T13:49:16+00:00",
+    "generated_at_utc": "2026-05-02T15:04:38+00:00",
     "model_run": "GFS 2026-05-02 06Z",
-    "nowcast_valid_utc": "2026-05-02T14:00:00+00:00",
-    "nowcast_forecast_hour": 8,
+    "nowcast_valid_utc": "2026-05-02T15:00:00+00:00",
+    "nowcast_forecast_hour": 9,
     "window_hours": 24,
     "climatology_version": "ERA5 1991-2020 v1",
     "grid_resolution_deg": 0.25,
@@ -18,13 +18,13 @@
       "lat": -12.046,
       "lon": -77.043,
       "tz": "America/Lima",
-      "current_temp_c": 20.2,
+      "current_temp_c": 20.9,
       "daily_max_c": 23.3,
       "daily_min_c": 17.6,
       "climatology_mean_c": 18.8,
       "climatology_p95_c": 21.1,
-      "anomaly_c": 1.4,
-      "percentile": 89.1
+      "anomaly_c": 2.1,
+      "percentile": 96.8
     },
     {
       "geonames_id": 3448439,
@@ -33,13 +33,13 @@
       "lat": -23.548,
       "lon": -46.636,
       "tz": "America/Sao_Paulo",
-      "current_temp_c": 26.1,
+      "current_temp_c": 26.8,
       "daily_max_c": 27.4,
       "daily_min_c": 16.5,
       "climatology_mean_c": 19.3,
       "climatology_p95_c": 23.1,
-      "anomaly_c": 6.8,
-      "percentile": 99.9
+      "anomaly_c": 7.5,
+      "percentile": 100.0
     },
     {
       "geonames_id": 3871336,
@@ -48,13 +48,13 @@
       "lat": -33.459,
       "lon": -70.645,
       "tz": "America/Santiago",
-      "current_temp_c": 18.5,
+      "current_temp_c": 20.7,
       "daily_max_c": 26.1,
       "daily_min_c": 15.0,
       "climatology_mean_c": 14.1,
       "climatology_p95_c": 17.3,
-      "anomaly_c": 4.4,
-      "percentile": 98.2
+      "anomaly_c": 6.6,
+      "percentile": 99.9
     },
     {
       "geonames_id": 3435910,
@@ -63,13 +63,13 @@
       "lat": -34.611,
       "lon": -58.396,
       "tz": "America/Argentina/Buenos_Aires",
-      "current_temp_c": 13.6,
+      "current_temp_c": 14.3,
       "daily_max_c": 15.6,
       "daily_min_c": 8.7,
       "climatology_mean_c": 15.9,
       "climatology_p95_c": 20.3,
-      "anomaly_c": -2.3,
-      "percentile": 20.0
+      "anomaly_c": -1.6,
+      "percentile": 27.8
     },
     {
       "geonames_id": 3688689,
@@ -78,13 +78,13 @@
       "lat": 4.711,
       "lon": -74.072,
       "tz": "America/Bogota",
-      "current_temp_c": 16.6,
+      "current_temp_c": 17.0,
       "daily_max_c": 17.0,
       "daily_min_c": 8.8,
       "climatology_mean_c": 15.4,
       "climatology_p95_c": 17.1,
-      "anomaly_c": 1.2,
-      "percentile": 89.4
+      "anomaly_c": 1.6,
+      "percentile": 95.3
     },
     {
       "geonames_id": 3646738,
@@ -93,13 +93,13 @@
       "lat": 10.491,
       "lon": -66.88,
       "tz": "America/Caracas",
-      "current_temp_c": 25.5,
+      "current_temp_c": 26.3,
       "daily_max_c": 27.9,
       "daily_min_c": 19.0,
       "climatology_mean_c": 24.7,
       "climatology_p95_c": 26.5,
-      "anomaly_c": 0.8,
-      "percentile": 77.1
+      "anomaly_c": 1.6,
+      "percentile": 93.4
     },
     {
       "geonames_id": 3530597,
@@ -108,13 +108,13 @@
       "lat": 19.428,
       "lon": -99.128,
       "tz": "America/Mexico_City",
-      "current_temp_c": 20.2,
+      "current_temp_c": 21.2,
       "daily_max_c": 28.6,
       "daily_min_c": 15.5,
       "climatology_mean_c": 17.1,
       "climatology_p95_c": 20.1,
-      "anomaly_c": 3.1,
-      "percentile": 94.3
+      "anomaly_c": 4.1,
+      "percentile": 98.1
     },
     {
       "geonames_id": 5128581,
@@ -123,13 +123,13 @@
       "lat": 40.713,
       "lon": -74.006,
       "tz": "America/New_York",
-      "current_temp_c": 9.5,
+      "current_temp_c": 9.9,
       "daily_max_c": 15.1,
       "daily_min_c": 6.5,
       "climatology_mean_c": 14.0,
       "climatology_p95_c": 20.6,
-      "anomaly_c": -4.5,
-      "percentile": 9.4
+      "anomaly_c": -4.1,
+      "percentile": 11.5
     },
     {
       "geonames_id": 4887398,
@@ -138,13 +138,13 @@
       "lat": 41.878,
       "lon": -87.63,
       "tz": "America/Chicago",
-      "current_temp_c": 7.6,
+      "current_temp_c": 9.2,
       "daily_max_c": 12.8,
-      "daily_min_c": 7.6,
+      "daily_min_c": 8.1,
       "climatology_mean_c": 11.4,
       "climatology_p95_c": 19.5,
-      "anomaly_c": -3.8,
-      "percentile": 17.9
+      "anomaly_c": -2.2,
+      "percentile": 29.7
     },
     {
       "geonames_id": 5391959,
@@ -153,13 +153,13 @@
       "lat": 37.775,
       "lon": -122.418,
       "tz": "America/Los_Angeles",
-      "current_temp_c": 12.4,
+      "current_temp_c": 12.6,
       "daily_max_c": 14.0,
       "daily_min_c": 11.9,
       "climatology_mean_c": 14.5,
       "climatology_p95_c": 18.8,
-      "anomaly_c": -2.1,
-      "percentile": 18.0
+      "anomaly_c": -1.9,
+      "percentile": 20.4
     },
     {
       "geonames_id": 5419384,
@@ -168,13 +168,13 @@
       "lat": 39.739,
       "lon": -104.984,
       "tz": "America/Denver",
-      "current_temp_c": 10.5,
+      "current_temp_c": 12.7,
       "daily_max_c": 21.9,
-      "daily_min_c": 10.5,
+      "daily_min_c": 11.7,
       "climatology_mean_c": 10.2,
       "climatology_p95_c": 17.8,
-      "anomaly_c": 0.3,
-      "percentile": 52.6
+      "anomaly_c": 2.5,
+      "percentile": 71.0
     },
     {
       "geonames_id": 4684888,
@@ -183,13 +183,13 @@
       "lat": 32.776,
       "lon": -96.797,
       "tz": "America/Chicago",
-      "current_temp_c": 15.6,
+      "current_temp_c": 17.5,
       "daily_max_c": 23.7,
       "daily_min_c": 14.4,
       "climatology_mean_c": 20.8,
       "climatology_p95_c": 26.0,
-      "anomaly_c": -5.2,
-      "percentile": 6.4
+      "anomaly_c": -3.3,
+      "percentile": 16.6
     },
     {
       "geonames_id": 5308655,
@@ -198,13 +198,13 @@
       "lat": 33.448,
       "lon": -112.074,
       "tz": "America/Phoenix",
-      "current_temp_c": 23.4,
+      "current_temp_c": 24.6,
       "daily_max_c": 32.2,
-      "daily_min_c": 23.4,
+      "daily_min_c": 24.6,
       "climatology_mean_c": 25.4,
       "climatology_p95_c": 30.6,
-      "anomaly_c": -2.0,
-      "percentile": 28.3
+      "anomaly_c": -0.8,
+      "percentile": 40.7
     },
     {
       "geonames_id": 4699066,
@@ -213,13 +213,13 @@
       "lat": 29.76,
       "lon": -95.369,
       "tz": "America/Chicago",
-      "current_temp_c": 15.0,
+      "current_temp_c": 17.1,
       "daily_max_c": 24.7,
-      "daily_min_c": 15.0,
+      "daily_min_c": 15.8,
       "climatology_mean_c": 22.8,
       "climatology_p95_c": 27.1,
-      "anomaly_c": -7.8,
-      "percentile": 0.3
+      "anomaly_c": -5.7,
+      "percentile": 2.2
     },
     {
       "geonames_id": 5856195,
@@ -243,13 +243,13 @@
       "lat": 43.7,
       "lon": -79.42,
       "tz": "America/Toronto",
-      "current_temp_c": 6.0,
-      "daily_max_c": 9.2,
+      "current_temp_c": 7.3,
+      "daily_max_c": 10.2,
       "daily_min_c": 1.1,
       "climatology_mean_c": 10.0,
       "climatology_p95_c": 16.7,
-      "anomaly_c": -4.0,
-      "percentile": 14.9
+      "anomaly_c": -2.7,
+      "percentile": 24.1
     },
     {
       "geonames_id": 6173331,
@@ -258,13 +258,13 @@
       "lat": 49.282,
       "lon": -123.12,
       "tz": "America/Vancouver",
-      "current_temp_c": 12.0,
+      "current_temp_c": 14.3,
       "daily_max_c": 24.9,
-      "daily_min_c": 12.0,
+      "daily_min_c": 12.7,
       "climatology_mean_c": 7.9,
       "climatology_p95_c": 12.6,
-      "anomaly_c": 4.1,
-      "percentile": 95.0
+      "anomaly_c": 6.4,
+      "percentile": 99.5
     },
     {
       "geonames_id": 2643743,
@@ -273,12 +273,12 @@
       "lat": 51.508,
       "lon": -0.126,
       "tz": "Europe/London",
-      "current_temp_c": 21.8,
+      "current_temp_c": 22.0,
       "daily_max_c": 22.0,
       "daily_min_c": 12.4,
       "climatology_mean_c": 10.7,
       "climatology_p95_c": 15.7,
-      "anomaly_c": 11.1,
+      "anomaly_c": 11.3,
       "percentile": 100.0
     },
     {
@@ -288,12 +288,12 @@
       "lat": 48.857,
       "lon": 2.351,
       "tz": "Europe/Paris",
-      "current_temp_c": 24.3,
-      "daily_max_c": 24.3,
+      "current_temp_c": 24.1,
+      "daily_max_c": 24.1,
       "daily_min_c": 12.9,
       "climatology_mean_c": 12.4,
       "climatology_p95_c": 18.0,
-      "anomaly_c": 11.9,
+      "anomaly_c": 11.7,
       "percentile": 100.0
     },
     {
@@ -303,12 +303,12 @@
       "lat": 52.52,
       "lon": 13.405,
       "tz": "Europe/Berlin",
-      "current_temp_c": 24.8,
+      "current_temp_c": 24.6,
       "daily_max_c": 26.2,
       "daily_min_c": 13.6,
       "climatology_mean_c": 12.4,
       "climatology_p95_c": 18.2,
-      "anomaly_c": 12.4,
+      "anomaly_c": 12.2,
       "percentile": 100.0
     },
     {
@@ -318,13 +318,13 @@
       "lat": 41.892,
       "lon": 12.482,
       "tz": "Europe/Rome",
-      "current_temp_c": 21.4,
+      "current_temp_c": 19.5,
       "daily_max_c": 21.9,
       "daily_min_c": 8.5,
       "climatology_mean_c": 15.9,
       "climatology_p95_c": 19.0,
-      "anomaly_c": 5.5,
-      "percentile": 99.8
+      "anomaly_c": 3.6,
+      "percentile": 97.1
     },
     {
       "geonames_id": 3117735,
@@ -348,12 +348,12 @@
       "lat": 59.329,
       "lon": 18.069,
       "tz": "Europe/Stockholm",
-      "current_temp_c": 22.7,
+      "current_temp_c": 22.8,
       "daily_max_c": 22.8,
       "daily_min_c": 5.2,
       "climatology_mean_c": 8.2,
       "climatology_p95_c": 13.4,
-      "anomaly_c": 14.5,
+      "anomaly_c": 14.6,
       "percentile": 100.0
     },
     {
@@ -363,13 +363,13 @@
       "lat": 55.756,
       "lon": 37.617,
       "tz": "Europe/Moscow",
-      "current_temp_c": 14.4,
+      "current_temp_c": 14.0,
       "daily_max_c": 19.9,
       "daily_min_c": 7.6,
       "climatology_mean_c": 10.9,
       "climatology_p95_c": 17.2,
-      "anomaly_c": 3.5,
-      "percentile": 78.6
+      "anomaly_c": 3.1,
+      "percentile": 75.9
     },
     {
       "geonames_id": 745044,
@@ -378,13 +378,13 @@
       "lat": 41.013,
       "lon": 28.949,
       "tz": "Europe/Istanbul",
-      "current_temp_c": 11.8,
-      "daily_max_c": 11.8,
+      "current_temp_c": 11.3,
+      "daily_max_c": 11.6,
       "daily_min_c": 8.9,
       "climatology_mean_c": 14.5,
       "climatology_p95_c": 18.6,
-      "anomaly_c": -2.7,
-      "percentile": 13.2
+      "anomaly_c": -3.2,
+      "percentile": 9.3
     },
     {
       "geonames_id": 785842,
@@ -393,13 +393,13 @@
       "lat": 37.984,
       "lon": 23.728,
       "tz": "Europe/Athens",
-      "current_temp_c": 12.6,
+      "current_temp_c": 12.1,
       "daily_max_c": 12.8,
       "daily_min_c": 7.6,
       "climatology_mean_c": 17.5,
       "climatology_p95_c": 21.7,
-      "anomaly_c": -4.9,
-      "percentile": 2.2
+      "anomaly_c": -5.4,
+      "percentile": 1.3
     },
     {
       "geonames_id": 3067696,
@@ -408,13 +408,13 @@
       "lat": 50.088,
       "lon": 14.421,
       "tz": "Europe/Prague",
-      "current_temp_c": 22.7,
+      "current_temp_c": 22.5,
       "daily_max_c": 23.2,
       "daily_min_c": 9.4,
       "climatology_mean_c": 12.7,
       "climatology_p95_c": 18.5,
-      "anomaly_c": 10.0,
-      "percentile": 99.8
+      "anomaly_c": 9.8,
+      "percentile": 99.7
     },
     {
       "geonames_id": 756135,
@@ -423,13 +423,13 @@
       "lat": 52.23,
       "lon": 21.012,
       "tz": "Europe/Warsaw",
-      "current_temp_c": 23.4,
+      "current_temp_c": 23.1,
       "daily_max_c": 24.2,
       "daily_min_c": 11.6,
       "climatology_mean_c": 12.9,
       "climatology_p95_c": 19.0,
-      "anomaly_c": 10.5,
-      "percentile": 99.7
+      "anomaly_c": 10.2,
+      "percentile": 99.6
     },
     {
       "geonames_id": 2759794,
@@ -438,12 +438,12 @@
       "lat": 52.374,
       "lon": 4.889,
       "tz": "Europe/Amsterdam",
-      "current_temp_c": 20.8,
-      "daily_max_c": 20.8,
+      "current_temp_c": 20.5,
+      "daily_max_c": 20.5,
       "daily_min_c": 12.1,
       "climatology_mean_c": 11.0,
       "climatology_p95_c": 15.9,
-      "anomaly_c": 9.8,
+      "anomaly_c": 9.5,
       "percentile": 100.0
     },
     {
@@ -453,13 +453,13 @@
       "lat": 48.208,
       "lon": 16.373,
       "tz": "Europe/Vienna",
-      "current_temp_c": 22.3,
+      "current_temp_c": 22.0,
       "daily_max_c": 22.5,
       "daily_min_c": 10.0,
       "climatology_mean_c": 14.0,
       "climatology_p95_c": 19.5,
-      "anomaly_c": 8.3,
-      "percentile": 99.5
+      "anomaly_c": 8.0,
+      "percentile": 99.3
     },
     {
       "geonames_id": 2673722,
@@ -468,13 +468,13 @@
       "lat": 60.171,
       "lon": 24.941,
       "tz": "Europe/Helsinki",
-      "current_temp_c": 16.6,
-      "daily_max_c": 16.6,
+      "current_temp_c": 15.8,
+      "daily_max_c": 15.8,
       "daily_min_c": 6.1,
       "climatology_mean_c": 7.5,
       "climatology_p95_c": 13.2,
-      "anomaly_c": 9.1,
-      "percentile": 99.8
+      "anomaly_c": 8.3,
+      "percentile": 99.5
     },
     {
       "geonames_id": 3413829,
@@ -483,13 +483,13 @@
       "lat": 64.135,
       "lon": -21.895,
       "tz": "Atlantic/Reykjavik",
-      "current_temp_c": 5.6,
+      "current_temp_c": 5.7,
       "daily_max_c": 5.8,
       "daily_min_c": 3.8,
       "climatology_mean_c": 5.2,
       "climatology_p95_c": 9.6,
-      "anomaly_c": 0.4,
-      "percentile": 56.0
+      "anomaly_c": 0.5,
+      "percentile": 57.5
     },
     {
       "geonames_id": 2964574,
@@ -498,13 +498,13 @@
       "lat": 53.349,
       "lon": -6.26,
       "tz": "Europe/Dublin",
-      "current_temp_c": 13.3,
-      "daily_max_c": 13.3,
+      "current_temp_c": 13.0,
+      "daily_max_c": 13.0,
       "daily_min_c": 8.3,
       "climatology_mean_c": 10.1,
       "climatology_p95_c": 13.7,
-      "anomaly_c": 3.2,
-      "percentile": 93.2
+      "anomaly_c": 2.9,
+      "percentile": 91.1
     },
     {
       "geonames_id": 2618425,
@@ -513,12 +513,12 @@
       "lat": 55.676,
       "lon": 12.568,
       "tz": "Europe/Copenhagen",
-      "current_temp_c": 22.0,
-      "daily_max_c": 22.0,
+      "current_temp_c": 21.8,
+      "daily_max_c": 21.8,
       "daily_min_c": 10.5,
       "climatology_mean_c": 9.9,
       "climatology_p95_c": 14.7,
-      "anomaly_c": 12.1,
+      "anomaly_c": 11.9,
       "percentile": 100.0
     },
     {
@@ -528,13 +528,13 @@
       "lat": 38.722,
       "lon": -9.139,
       "tz": "Europe/Lisbon",
-      "current_temp_c": 19.9,
-      "daily_max_c": 19.9,
+      "current_temp_c": 19.7,
+      "daily_max_c": 19.7,
       "daily_min_c": 12.8,
       "climatology_mean_c": 15.5,
       "climatology_p95_c": 19.3,
-      "anomaly_c": 4.4,
-      "percentile": 98.6
+      "anomaly_c": 4.2,
+      "percentile": 98.2
     },
     {
       "geonames_id": 360630,
@@ -543,13 +543,13 @@
       "lat": 30.044,
       "lon": 31.236,
       "tz": "Africa/Cairo",
-      "current_temp_c": 35.3,
-      "daily_max_c": 35.3,
+      "current_temp_c": 31.3,
+      "daily_max_c": 31.3,
       "daily_min_c": 19.1,
       "climatology_mean_c": 23.2,
       "climatology_p95_c": 28.2,
-      "anomaly_c": 12.1,
-      "percentile": 100.0
+      "anomaly_c": 8.1,
+      "percentile": 99.9
     },
     {
       "geonames_id": 2332459,
@@ -558,13 +558,13 @@
       "lat": 6.524,
       "lon": 3.379,
       "tz": "Africa/Lagos",
-      "current_temp_c": 28.8,
+      "current_temp_c": 28.5,
       "daily_max_c": 29.2,
       "daily_min_c": 28.5,
       "climatology_mean_c": 27.3,
       "climatology_p95_c": 28.7,
-      "anomaly_c": 1.5,
-      "percentile": 95.1
+      "anomaly_c": 1.2,
+      "percentile": 90.5
     },
     {
       "geonames_id": 993800,
@@ -573,13 +573,13 @@
       "lat": -26.205,
       "lon": 28.05,
       "tz": "Africa/Johannesburg",
-      "current_temp_c": 21.3,
+      "current_temp_c": 20.5,
       "daily_max_c": 24.4,
       "daily_min_c": 13.9,
       "climatology_mean_c": 15.1,
       "climatology_p95_c": 18.7,
-      "anomaly_c": 6.2,
-      "percentile": 99.7
+      "anomaly_c": 5.4,
+      "percentile": 99.2
     },
     {
       "geonames_id": 3369157,
@@ -603,13 +603,13 @@
       "lat": -1.292,
       "lon": 36.822,
       "tz": "Africa/Nairobi",
-      "current_temp_c": 19.4,
+      "current_temp_c": 17.9,
       "daily_max_c": 22.6,
       "daily_min_c": 13.6,
       "climatology_mean_c": 19.2,
       "climatology_p95_c": 20.5,
-      "anomaly_c": 0.2,
-      "percentile": 60.7
+      "anomaly_c": -1.3,
+      "percentile": 4.7
     },
     {
       "geonames_id": 344979,
@@ -618,13 +618,13 @@
       "lat": 9.025,
       "lon": 38.747,
       "tz": "Africa/Addis_Ababa",
-      "current_temp_c": 18.6,
+      "current_temp_c": 16.9,
       "daily_max_c": 19.8,
-      "daily_min_c": 14.1,
+      "daily_min_c": 13.9,
       "climatology_mean_c": 17.0,
       "climatology_p95_c": 19.0,
-      "anomaly_c": 1.6,
-      "percentile": 91.4
+      "anomaly_c": -0.1,
+      "percentile": 46.2
     },
     {
       "geonames_id": 2542997,
@@ -633,13 +633,13 @@
       "lat": 33.589,
       "lon": -7.603,
       "tz": "Africa/Casablanca",
-      "current_temp_c": 22.5,
+      "current_temp_c": 21.9,
       "daily_max_c": 22.6,
       "daily_min_c": 13.9,
       "climatology_mean_c": 17.9,
       "climatology_p95_c": 20.5,
-      "anomaly_c": 4.6,
-      "percentile": 99.9
+      "anomaly_c": 4.0,
+      "percentile": 99.6
     },
     {
       "geonames_id": 2542543,
@@ -648,13 +648,13 @@
       "lat": 31.629,
       "lon": -7.981,
       "tz": "Africa/Casablanca",
-      "current_temp_c": 25.4,
+      "current_temp_c": 26.0,
       "daily_max_c": 26.3,
       "daily_min_c": 15.6,
       "climatology_mean_c": 19.4,
       "climatology_p95_c": 25.2,
-      "anomaly_c": 6.0,
-      "percentile": 96.2
+      "anomaly_c": 6.6,
+      "percentile": 97.5
     },
     {
       "geonames_id": 2464470,
@@ -663,13 +663,13 @@
       "lat": 36.806,
       "lon": 10.181,
       "tz": "Africa/Tunis",
-      "current_temp_c": 19.1,
+      "current_temp_c": 18.9,
       "daily_max_c": 26.2,
       "daily_min_c": 12.4,
       "climatology_mean_c": 18.3,
       "climatology_p95_c": 21.8,
-      "anomaly_c": 0.8,
-      "percentile": 66.5
+      "anomaly_c": 0.6,
+      "percentile": 62.7
     },
     {
       "geonames_id": 2464461,
@@ -678,13 +678,13 @@
       "lat": 36.737,
       "lon": 3.087,
       "tz": "Africa/Algiers",
-      "current_temp_c": 21.0,
-      "daily_max_c": 27.4,
+      "current_temp_c": 20.8,
+      "daily_max_c": 27.9,
       "daily_min_c": 19.1,
       "climatology_mean_c": 17.3,
       "climatology_p95_c": 21.1,
-      "anomaly_c": 3.7,
-      "percentile": 95.8
+      "anomaly_c": 3.5,
+      "percentile": 94.9
     },
     {
       "geonames_id": 379252,
@@ -693,12 +693,12 @@
       "lat": 15.501,
       "lon": 32.56,
       "tz": "Africa/Khartoum",
-      "current_temp_c": 39.7,
+      "current_temp_c": 39.5,
       "daily_max_c": 41.3,
       "daily_min_c": 30.6,
       "climatology_mean_c": 33.5,
       "climatology_p95_c": 36.7,
-      "anomaly_c": 6.2,
+      "anomaly_c": 6.0,
       "percentile": 99.7
     },
     {
@@ -723,13 +723,13 @@
       "lat": 5.359,
       "lon": -4.008,
       "tz": "Africa/Abidjan",
-      "current_temp_c": 28.9,
+      "current_temp_c": 28.8,
       "daily_max_c": 29.0,
       "daily_min_c": 28.0,
       "climatology_mean_c": 27.0,
       "climatology_p95_c": 28.2,
-      "anomaly_c": 1.9,
-      "percentile": 99.4
+      "anomaly_c": 1.8,
+      "percentile": 99.1
     },
     {
       "geonames_id": 2306104,
@@ -738,13 +738,13 @@
       "lat": 5.56,
       "lon": -0.205,
       "tz": "Africa/Accra",
-      "current_temp_c": 30.3,
+      "current_temp_c": 30.1,
       "daily_max_c": 30.6,
       "daily_min_c": 28.2,
       "climatology_mean_c": 28.1,
       "climatology_p95_c": 29.4,
-      "anomaly_c": 2.2,
-      "percentile": 99.5
+      "anomaly_c": 2.0,
+      "percentile": 99.1
     },
     {
       "geonames_id": 160263,
@@ -753,13 +753,13 @@
       "lat": -6.792,
       "lon": 39.208,
       "tz": "Africa/Dar_es_Salaam",
-      "current_temp_c": 28.5,
+      "current_temp_c": 25.9,
       "daily_max_c": 28.7,
       "daily_min_c": 22.5,
       "climatology_mean_c": 25.6,
       "climatology_p95_c": 27.0,
-      "anomaly_c": 2.9,
-      "percentile": 100.0
+      "anomaly_c": 0.3,
+      "percentile": 64.7
     },
     {
       "geonames_id": 232422,
@@ -768,13 +768,13 @@
       "lat": 0.314,
       "lon": 32.581,
       "tz": "Africa/Kampala",
-      "current_temp_c": 22.9,
-      "daily_max_c": 22.9,
+      "current_temp_c": 21.9,
+      "daily_max_c": 22.3,
       "daily_min_c": 17.9,
       "climatology_mean_c": 21.2,
       "climatology_p95_c": 22.5,
-      "anomaly_c": 1.7,
-      "percentile": 99.1
+      "anomaly_c": 0.7,
+      "percentile": 84.4
     },
     {
       "geonames_id": 2314302,
@@ -783,13 +783,13 @@
       "lat": -4.325,
       "lon": 15.322,
       "tz": "Africa/Kinshasa",
-      "current_temp_c": 26.0,
+      "current_temp_c": 25.5,
       "daily_max_c": 35.2,
       "daily_min_c": 22.0,
       "climatology_mean_c": 26.0,
       "climatology_p95_c": 27.4,
-      "anomaly_c": 0.0,
-      "percentile": 52.1
+      "anomaly_c": -0.5,
+      "percentile": 30.9
     },
     {
       "geonames_id": 890299,
@@ -798,12 +798,12 @@
       "lat": -17.829,
       "lon": 31.054,
       "tz": "Africa/Harare",
-      "current_temp_c": 25.4,
+      "current_temp_c": 23.5,
       "daily_max_c": 26.9,
       "daily_min_c": 15.4,
       "climatology_mean_c": 17.9,
       "climatology_p95_c": 20.5,
-      "anomaly_c": 7.5,
+      "anomaly_c": 5.6,
       "percentile": 100.0
     },
     {
@@ -813,13 +813,13 @@
       "lat": -25.966,
       "lon": 32.568,
       "tz": "Africa/Maputo",
-      "current_temp_c": 27.1,
+      "current_temp_c": 25.3,
       "daily_max_c": 30.2,
       "daily_min_c": 20.4,
       "climatology_mean_c": 22.4,
       "climatology_p95_c": 25.2,
-      "anomaly_c": 4.7,
-      "percentile": 99.7
+      "anomaly_c": 2.9,
+      "percentile": 95.4
     },
     {
       "geonames_id": 3354077,
@@ -828,12 +828,12 @@
       "lat": -22.56,
       "lon": 17.084,
       "tz": "Africa/Windhoek",
-      "current_temp_c": 26.3,
+      "current_temp_c": 25.6,
       "daily_max_c": 27.4,
       "daily_min_c": 14.8,
       "climatology_mean_c": 16.9,
       "climatology_p95_c": 19.8,
-      "anomaly_c": 9.4,
+      "anomaly_c": 8.7,
       "percentile": 100.0
     },
     {
@@ -843,13 +843,13 @@
       "lat": 25.205,
       "lon": 55.271,
       "tz": "Asia/Dubai",
-      "current_temp_c": 29.0,
+      "current_temp_c": 28.5,
       "daily_max_c": 29.8,
       "daily_min_c": 27.5,
       "climatology_mean_c": 29.1,
       "climatology_p95_c": 32.5,
-      "anomaly_c": -0.1,
-      "percentile": 47.8
+      "anomaly_c": -0.6,
+      "percentile": 38.5
     },
     {
       "geonames_id": 108410,
@@ -858,13 +858,13 @@
       "lat": 24.713,
       "lon": 46.675,
       "tz": "Asia/Riyadh",
-      "current_temp_c": 37.4,
+      "current_temp_c": 36.2,
       "daily_max_c": 37.4,
       "daily_min_c": 26.7,
       "climatology_mean_c": 29.7,
       "climatology_p95_c": 33.9,
-      "anomaly_c": 7.7,
-      "percentile": 99.4
+      "anomaly_c": 6.5,
+      "percentile": 98.2
     },
     {
       "geonames_id": 281184,
@@ -873,13 +873,13 @@
       "lat": 31.769,
       "lon": 35.214,
       "tz": "Asia/Jerusalem",
-      "current_temp_c": 25.7,
-      "daily_max_c": 25.7,
-      "daily_min_c": 18.2,
+      "current_temp_c": 25.1,
+      "daily_max_c": 25.1,
+      "daily_min_c": 16.7,
       "climatology_mean_c": 19.9,
       "climatology_p95_c": 26.2,
-      "anomaly_c": 5.8,
-      "percentile": 96.4
+      "anomaly_c": 5.2,
+      "percentile": 94.7
     },
     {
       "geonames_id": 250441,
@@ -888,13 +888,13 @@
       "lat": 31.956,
       "lon": 35.945,
       "tz": "Asia/Amman",
-      "current_temp_c": 24.8,
-      "daily_max_c": 24.8,
+      "current_temp_c": 24.4,
+      "daily_max_c": 24.7,
       "daily_min_c": 16.9,
       "climatology_mean_c": 21.0,
       "climatology_p95_c": 27.2,
-      "anomaly_c": 3.8,
-      "percentile": 85.3
+      "anomaly_c": 3.4,
+      "percentile": 82.6
     },
     {
       "geonames_id": 276781,
@@ -903,13 +903,13 @@
       "lat": 33.889,
       "lon": 35.495,
       "tz": "Asia/Beirut",
-      "current_temp_c": 19.8,
+      "current_temp_c": 19.9,
       "daily_max_c": 20.8,
-      "daily_min_c": 18.8,
+      "daily_min_c": 18.5,
       "climatology_mean_c": 19.4,
       "climatology_p95_c": 22.4,
-      "anomaly_c": 0.4,
-      "percentile": 60.5
+      "anomaly_c": 0.5,
+      "percentile": 62.9
     },
     {
       "geonames_id": 98182,
@@ -918,13 +918,13 @@
       "lat": 33.341,
       "lon": 44.401,
       "tz": "Asia/Baghdad",
-      "current_temp_c": 33.5,
+      "current_temp_c": 32.2,
       "daily_max_c": 37.4,
       "daily_min_c": 25.0,
       "climatology_mean_c": 27.8,
       "climatology_p95_c": 33.1,
-      "anomaly_c": 5.7,
-      "percentile": 95.5
+      "anomaly_c": 4.4,
+      "percentile": 90.5
     },
     {
       "geonames_id": 112931,
@@ -933,13 +933,13 @@
       "lat": 35.689,
       "lon": 51.389,
       "tz": "Asia/Tehran",
-      "current_temp_c": 22.2,
+      "current_temp_c": 21.6,
       "daily_max_c": 24.2,
       "daily_min_c": 17.5,
       "climatology_mean_c": 15.5,
       "climatology_p95_c": 20.4,
-      "anomaly_c": 6.7,
-      "percentile": 98.2
+      "anomaly_c": 6.1,
+      "percentile": 97.2
     },
     {
       "geonames_id": 290030,
@@ -948,13 +948,13 @@
       "lat": 25.286,
       "lon": 51.531,
       "tz": "Asia/Qatar",
-      "current_temp_c": 32.3,
+      "current_temp_c": 30.8,
       "daily_max_c": 39.2,
       "daily_min_c": 27.2,
       "climatology_mean_c": 28.3,
       "climatology_p95_c": 31.4,
-      "anomaly_c": 4.0,
-      "percentile": 98.1
+      "anomaly_c": 2.5,
+      "percentile": 90.2
     },
     {
       "geonames_id": 285787,
@@ -963,13 +963,13 @@
       "lat": 29.378,
       "lon": 47.991,
       "tz": "Asia/Kuwait",
-      "current_temp_c": 26.5,
+      "current_temp_c": 26.7,
       "daily_max_c": 29.6,
       "daily_min_c": 25.9,
       "climatology_mean_c": 29.7,
       "climatology_p95_c": 33.7,
-      "anomaly_c": -3.2,
-      "percentile": 11.9
+      "anomaly_c": -3.0,
+      "percentile": 13.4
     },
     {
       "geonames_id": 1275339,
@@ -978,13 +978,13 @@
       "lat": 19.076,
       "lon": 72.878,
       "tz": "Asia/Kolkata",
-      "current_temp_c": 29.0,
+      "current_temp_c": 28.8,
       "daily_max_c": 30.9,
       "daily_min_c": 27.2,
       "climatology_mean_c": 28.8,
       "climatology_p95_c": 30.1,
-      "anomaly_c": 0.2,
-      "percentile": 60.4
+      "anomaly_c": 0.0,
+      "percentile": 50.2
     },
     {
       "geonames_id": 1273294,
@@ -993,13 +993,13 @@
       "lat": 28.704,
       "lon": 77.103,
       "tz": "Asia/Kolkata",
-      "current_temp_c": 37.9,
+      "current_temp_c": 37.0,
       "daily_max_c": 42.4,
       "daily_min_c": 31.9,
       "climatology_mean_c": 31.8,
       "climatology_p95_c": 35.3,
-      "anomaly_c": 6.1,
-      "percentile": 99.6
+      "anomaly_c": 5.2,
+      "percentile": 98.8
     },
     {
       "geonames_id": 1264527,
@@ -1008,13 +1008,13 @@
       "lat": 13.083,
       "lon": 80.27,
       "tz": "Asia/Kolkata",
-      "current_temp_c": 30.0,
+      "current_temp_c": 30.5,
       "daily_max_c": 35.8,
       "daily_min_c": 29.0,
       "climatology_mean_c": 30.6,
       "climatology_p95_c": 32.1,
-      "anomaly_c": -0.6,
-      "percentile": 27.2
+      "anomaly_c": -0.1,
+      "percentile": 45.3
     },
     {
       "geonames_id": 1275004,
@@ -1023,13 +1023,13 @@
       "lat": 22.572,
       "lon": 88.364,
       "tz": "Asia/Kolkata",
-      "current_temp_c": 27.6,
+      "current_temp_c": 27.9,
       "daily_max_c": 36.9,
       "daily_min_c": 25.1,
       "climatology_mean_c": 30.1,
       "climatology_p95_c": 32.8,
-      "anomaly_c": -2.5,
-      "percentile": 9.7
+      "anomaly_c": -2.2,
+      "percentile": 12.7
     },
     {
       "geonames_id": 1277333,
@@ -1038,12 +1038,12 @@
       "lat": 12.972,
       "lon": 77.594,
       "tz": "Asia/Kolkata",
-      "current_temp_c": 33.0,
+      "current_temp_c": 32.3,
       "daily_max_c": 35.2,
       "daily_min_c": 23.3,
       "climatology_mean_c": 27.0,
       "climatology_p95_c": 29.5,
-      "anomaly_c": 6.0,
+      "anomaly_c": 5.3,
       "percentile": 100.0
     },
     {
@@ -1053,13 +1053,13 @@
       "lat": 24.861,
       "lon": 67.01,
       "tz": "Asia/Karachi",
-      "current_temp_c": 29.1,
-      "daily_max_c": 29.1,
+      "current_temp_c": 28.9,
+      "daily_max_c": 28.9,
       "daily_min_c": 27.5,
       "climatology_mean_c": 29.6,
       "climatology_p95_c": 32.0,
-      "anomaly_c": -0.5,
-      "percentile": 34.1
+      "anomaly_c": -0.7,
+      "percentile": 28.3
     },
     {
       "geonames_id": 1185241,
@@ -1068,13 +1068,13 @@
       "lat": 23.811,
       "lon": 90.413,
       "tz": "Asia/Dhaka",
-      "current_temp_c": 22.4,
+      "current_temp_c": 22.6,
       "daily_max_c": 29.6,
       "daily_min_c": 21.3,
       "climatology_mean_c": 28.1,
       "climatology_p95_c": 31.5,
-      "anomaly_c": -5.7,
-      "percentile": 0.5
+      "anomaly_c": -5.5,
+      "percentile": 0.7
     },
     {
       "geonames_id": 1283240,
@@ -1083,13 +1083,13 @@
       "lat": 27.717,
       "lon": 85.324,
       "tz": "Asia/Kathmandu",
-      "current_temp_c": 15.6,
+      "current_temp_c": 15.3,
       "daily_max_c": 17.4,
       "daily_min_c": 14.5,
       "climatology_mean_c": 19.6,
       "climatology_p95_c": 22.9,
-      "anomaly_c": -4.0,
-      "percentile": 2.2
+      "anomaly_c": -4.3,
+      "percentile": 1.5
     },
     {
       "geonames_id": 1248991,
@@ -1098,13 +1098,13 @@
       "lat": 6.932,
       "lon": 79.858,
       "tz": "Asia/Colombo",
-      "current_temp_c": 29.5,
+      "current_temp_c": 29.4,
       "daily_max_c": 30.0,
       "daily_min_c": 28.9,
       "climatology_mean_c": 28.1,
       "climatology_p95_c": 29.2,
-      "anomaly_c": 1.4,
-      "percentile": 97.2
+      "anomaly_c": 1.3,
+      "percentile": 96.2
     },
     {
       "geonames_id": 1880252,
@@ -1113,13 +1113,13 @@
       "lat": 1.29,
       "lon": 103.852,
       "tz": "Asia/Singapore",
-      "current_temp_c": 29.5,
+      "current_temp_c": 29.2,
       "daily_max_c": 30.8,
       "daily_min_c": 27.3,
       "climatology_mean_c": 27.5,
       "climatology_p95_c": 28.7,
-      "anomaly_c": 2.0,
-      "percentile": 99.9
+      "anomaly_c": 1.7,
+      "percentile": 99.5
     },
     {
       "geonames_id": 1735161,
@@ -1128,12 +1128,12 @@
       "lat": 3.139,
       "lon": 101.687,
       "tz": "Asia/Kuala_Lumpur",
-      "current_temp_c": 24.5,
+      "current_temp_c": 24.3,
       "daily_max_c": 30.5,
       "daily_min_c": 23.1,
       "climatology_mean_c": 27.5,
       "climatology_p95_c": 28.8,
-      "anomaly_c": -3.0,
+      "anomaly_c": -3.2,
       "percentile": 0.0
     },
     {
@@ -1143,13 +1143,13 @@
       "lat": 13.756,
       "lon": 100.502,
       "tz": "Asia/Bangkok",
-      "current_temp_c": 31.2,
+      "current_temp_c": 31.0,
       "daily_max_c": 38.0,
       "daily_min_c": 30.0,
       "climatology_mean_c": 30.9,
       "climatology_p95_c": 33.2,
-      "anomaly_c": 0.3,
-      "percentile": 57.4
+      "anomaly_c": 0.1,
+      "percentile": 52.8
     },
     {
       "geonames_id": 1581130,
@@ -1158,13 +1158,13 @@
       "lat": 21.028,
       "lon": 105.804,
       "tz": "Asia/Ho_Chi_Minh",
-      "current_temp_c": 26.0,
+      "current_temp_c": 25.7,
       "daily_max_c": 28.3,
-      "daily_min_c": 21.1,
+      "daily_min_c": 21.0,
       "climatology_mean_c": 26.9,
       "climatology_p95_c": 30.6,
-      "anomaly_c": -0.9,
-      "percentile": 36.9
+      "anomaly_c": -1.2,
+      "percentile": 32.6
     },
     {
       "geonames_id": 1566083,
@@ -1173,13 +1173,13 @@
       "lat": 10.823,
       "lon": 106.63,
       "tz": "Asia/Ho_Chi_Minh",
-      "current_temp_c": 29.1,
+      "current_temp_c": 28.9,
       "daily_max_c": 36.0,
       "daily_min_c": 27.4,
       "climatology_mean_c": 29.8,
       "climatology_p95_c": 32.1,
-      "anomaly_c": -0.7,
-      "percentile": 30.7
+      "anomaly_c": -0.9,
+      "percentile": 25.9
     },
     {
       "geonames_id": 1642911,
@@ -1188,13 +1188,13 @@
       "lat": -6.211,
       "lon": 106.845,
       "tz": "Asia/Jakarta",
-      "current_temp_c": 29.1,
+      "current_temp_c": 28.7,
       "daily_max_c": 33.0,
       "daily_min_c": 26.9,
       "climatology_mean_c": 27.6,
       "climatology_p95_c": 28.6,
-      "anomaly_c": 1.5,
-      "percentile": 99.3
+      "anomaly_c": 1.1,
+      "percentile": 96.4
     },
     {
       "geonames_id": 1701668,
@@ -1203,13 +1203,13 @@
       "lat": 14.599,
       "lon": 120.984,
       "tz": "Asia/Manila",
-      "current_temp_c": 28.1,
+      "current_temp_c": 27.7,
       "daily_max_c": 33.9,
       "daily_min_c": 26.6,
       "climatology_mean_c": 29.3,
       "climatology_p95_c": 30.4,
-      "anomaly_c": -1.2,
-      "percentile": 8.3
+      "anomaly_c": -1.6,
+      "percentile": 3.3
     },
     {
       "geonames_id": 1821306,
@@ -1218,13 +1218,13 @@
       "lat": 11.563,
       "lon": 104.916,
       "tz": "Asia/Phnom_Penh",
-      "current_temp_c": 32.2,
+      "current_temp_c": 31.7,
       "daily_max_c": 38.5,
       "daily_min_c": 27.4,
       "climatology_mean_c": 30.5,
       "climatology_p95_c": 32.9,
-      "anomaly_c": 1.7,
-      "percentile": 87.7
+      "anomaly_c": 1.2,
+      "percentile": 79.6
     },
     {
       "geonames_id": 1850147,
@@ -1233,13 +1233,13 @@
       "lat": 35.69,
       "lon": 139.692,
       "tz": "Asia/Tokyo",
-      "current_temp_c": 21.0,
+      "current_temp_c": 20.3,
       "daily_max_c": 24.6,
       "daily_min_c": 17.9,
       "climatology_mean_c": 16.6,
       "climatology_p95_c": 20.9,
-      "anomaly_c": 4.4,
-      "percentile": 94.6
+      "anomaly_c": 3.7,
+      "percentile": 91.2
     },
     {
       "geonames_id": 1853909,
@@ -1248,13 +1248,13 @@
       "lat": 34.694,
       "lon": 135.502,
       "tz": "Asia/Tokyo",
-      "current_temp_c": 18.3,
+      "current_temp_c": 17.4,
       "daily_max_c": 21.4,
       "daily_min_c": 16.1,
       "climatology_mean_c": 17.7,
       "climatology_p95_c": 21.8,
-      "anomaly_c": 0.6,
-      "percentile": 58.7
+      "anomaly_c": -0.3,
+      "percentile": 45.4
     },
     {
       "geonames_id": 1835848,
@@ -1263,13 +1263,13 @@
       "lat": 37.566,
       "lon": 126.978,
       "tz": "Asia/Seoul",
-      "current_temp_c": 17.2,
-      "daily_max_c": 17.2,
-      "daily_min_c": 11.2,
+      "current_temp_c": 16.3,
+      "daily_max_c": 16.3,
+      "daily_min_c": 10.6,
       "climatology_mean_c": 15.4,
       "climatology_p95_c": 20.0,
-      "anomaly_c": 1.8,
-      "percentile": 74.0
+      "anomaly_c": 0.9,
+      "percentile": 62.6
     },
     {
       "geonames_id": 1816670,
@@ -1278,13 +1278,13 @@
       "lat": 39.905,
       "lon": 116.397,
       "tz": "Asia/Shanghai",
-      "current_temp_c": 14.4,
+      "current_temp_c": 14.1,
       "daily_max_c": 22.6,
       "daily_min_c": 12.8,
       "climatology_mean_c": 18.9,
       "climatology_p95_c": 24.3,
-      "anomaly_c": -4.5,
-      "percentile": 9.5
+      "anomaly_c": -4.8,
+      "percentile": 8.2
     },
     {
       "geonames_id": 1796236,
@@ -1293,13 +1293,13 @@
       "lat": 31.23,
       "lon": 121.474,
       "tz": "Asia/Shanghai",
-      "current_temp_c": 19.8,
+      "current_temp_c": 18.8,
       "daily_max_c": 21.9,
-      "daily_min_c": 15.0,
+      "daily_min_c": 14.7,
       "climatology_mean_c": 19.0,
       "climatology_p95_c": 24.5,
-      "anomaly_c": 0.8,
-      "percentile": 60.4
+      "anomaly_c": -0.2,
+      "percentile": 47.4
     },
     {
       "geonames_id": 1809858,
@@ -1308,13 +1308,13 @@
       "lat": 23.129,
       "lon": 113.264,
       "tz": "Asia/Shanghai",
-      "current_temp_c": 27.0,
+      "current_temp_c": 26.7,
       "daily_max_c": 29.6,
       "daily_min_c": 19.4,
       "climatology_mean_c": 25.2,
       "climatology_p95_c": 28.6,
-      "anomaly_c": 1.8,
-      "percentile": 77.4
+      "anomaly_c": 1.5,
+      "percentile": 73.5
     },
     {
       "geonames_id": 1815286,
@@ -1323,13 +1323,13 @@
       "lat": 29.563,
       "lon": 106.551,
       "tz": "Asia/Shanghai",
-      "current_temp_c": 18.4,
+      "current_temp_c": 18.8,
       "daily_max_c": 23.2,
       "daily_min_c": 16.2,
       "climatology_mean_c": 21.6,
       "climatology_p95_c": 27.2,
-      "anomaly_c": -3.2,
-      "percentile": 17.8
+      "anomaly_c": -2.8,
+      "percentile": 21.0
     },
     {
       "geonames_id": 1819729,
@@ -1340,7 +1340,7 @@
       "tz": "Asia/Hong_Kong",
       "current_temp_c": 24.9,
       "daily_max_c": 26.8,
-      "daily_min_c": 22.0,
+      "daily_min_c": 21.8,
       "climatology_mean_c": 24.9,
       "climatology_p95_c": 27.9,
       "anomaly_c": 0.0,
@@ -1353,13 +1353,13 @@
       "lat": 25.033,
       "lon": 121.565,
       "tz": "Asia/Taipei",
-      "current_temp_c": 23.8,
+      "current_temp_c": 23.5,
       "daily_max_c": 32.7,
-      "daily_min_c": 22.3,
+      "daily_min_c": 21.8,
       "climatology_mean_c": 23.4,
       "climatology_p95_c": 26.6,
-      "anomaly_c": 0.4,
-      "percentile": 57.6
+      "anomaly_c": 0.1,
+      "percentile": 52.0
     },
     {
       "geonames_id": 2028462,
@@ -1368,13 +1368,13 @@
       "lat": 47.886,
       "lon": 106.906,
       "tz": "Asia/Ulaanbaatar",
-      "current_temp_c": 5.2,
+      "current_temp_c": 4.6,
       "daily_max_c": 16.0,
       "daily_min_c": 2.9,
       "climatology_mean_c": 6.0,
       "climatology_p95_c": 14.1,
-      "anomaly_c": -0.8,
-      "percentile": 43.5
+      "anomaly_c": -1.4,
+      "percentile": 38.9
     },
     {
       "geonames_id": 2147714,
@@ -1383,13 +1383,13 @@
       "lat": -33.868,
       "lon": 151.207,
       "tz": "Australia/Sydney",
-      "current_temp_c": 19.9,
+      "current_temp_c": 19.2,
       "daily_max_c": 23.2,
       "daily_min_c": 16.8,
       "climatology_mean_c": 15.9,
       "climatology_p95_c": 19.5,
-      "anomaly_c": 4.0,
-      "percentile": 97.1
+      "anomaly_c": 3.3,
+      "percentile": 94.0
     },
     {
       "geonames_id": 2158177,
@@ -1398,13 +1398,13 @@
       "lat": -37.814,
       "lon": 144.963,
       "tz": "Australia/Melbourne",
-      "current_temp_c": 21.7,
+      "current_temp_c": 22.2,
       "daily_max_c": 22.2,
       "daily_min_c": 13.1,
       "climatology_mean_c": 12.9,
       "climatology_p95_c": 18.0,
-      "anomaly_c": 8.8,
-      "percentile": 99.9
+      "anomaly_c": 9.3,
+      "percentile": 100.0
     },
     {
       "geonames_id": 2174003,
@@ -1413,13 +1413,13 @@
       "lat": -27.47,
       "lon": 153.025,
       "tz": "Australia/Brisbane",
-      "current_temp_c": 18.4,
+      "current_temp_c": 17.5,
       "daily_max_c": 25.4,
       "daily_min_c": 16.0,
       "climatology_mean_c": 19.1,
       "climatology_p95_c": 21.8,
-      "anomaly_c": -0.7,
-      "percentile": 33.2
+      "anomaly_c": -1.6,
+      "percentile": 16.3
     },
     {
       "geonames_id": 2063523,
@@ -1428,13 +1428,13 @@
       "lat": -31.953,
       "lon": 115.857,
       "tz": "Australia/Perth",
-      "current_temp_c": 15.6,
+      "current_temp_c": 15.5,
       "daily_max_c": 21.4,
       "daily_min_c": 15.1,
       "climatology_mean_c": 18.4,
       "climatology_p95_c": 22.3,
-      "anomaly_c": -2.8,
-      "percentile": 10.4
+      "anomaly_c": -2.9,
+      "percentile": 9.6
     },
     {
       "geonames_id": 2078025,
@@ -1443,13 +1443,13 @@
       "lat": -34.929,
       "lon": 138.601,
       "tz": "Australia/Adelaide",
-      "current_temp_c": 16.2,
+      "current_temp_c": 16.0,
       "daily_max_c": 17.1,
       "daily_min_c": 14.8,
       "climatology_mean_c": 15.6,
       "climatology_p95_c": 20.1,
-      "anomaly_c": 0.6,
-      "percentile": 60.8
+      "anomaly_c": 0.4,
+      "percentile": 57.5
     },
     {
       "geonames_id": 2179537,
@@ -1458,13 +1458,13 @@
       "lat": -36.848,
       "lon": 174.763,
       "tz": "Pacific/Auckland",
-      "current_temp_c": 11.9,
+      "current_temp_c": 11.4,
       "daily_max_c": 17.4,
       "daily_min_c": 10.9,
       "climatology_mean_c": 15.9,
       "climatology_p95_c": 18.5,
-      "anomaly_c": -4.0,
-      "percentile": 0.6
+      "anomaly_c": -4.5,
+      "percentile": 0.3
     },
     {
       "geonames_id": 2179670,
@@ -1488,13 +1488,13 @@
       "lat": 43.117,
       "lon": 131.9,
       "tz": "Asia/Vladivostok",
-      "current_temp_c": 8.0,
+      "current_temp_c": 8.1,
       "daily_max_c": 8.6,
       "daily_min_c": 6.6,
       "climatology_mean_c": 8.8,
       "climatology_p95_c": 12.5,
-      "anomaly_c": -0.8,
-      "percentile": 36.5
+      "anomaly_c": -0.7,
+      "percentile": 38.1
     },
     {
       "geonames_id": 1502026,
@@ -1503,13 +1503,13 @@
       "lat": 55.041,
       "lon": 82.934,
       "tz": "Asia/Novosibirsk",
-      "current_temp_c": 12.1,
+      "current_temp_c": 11.7,
       "daily_max_c": 13.6,
       "daily_min_c": 6.7,
       "climatology_mean_c": 8.1,
       "climatology_p95_c": 17.1,
-      "anomaly_c": 4.0,
-      "percentile": 77.3
+      "anomaly_c": 3.6,
+      "percentile": 75.0
     },
     {
       "geonames_id": 1486209,
@@ -1518,13 +1518,13 @@
       "lat": 56.838,
       "lon": 60.605,
       "tz": "Asia/Yekaterinburg",
-      "current_temp_c": 8.7,
+      "current_temp_c": 7.3,
       "daily_max_c": 13.7,
       "daily_min_c": 2.3,
       "climatology_mean_c": 7.7,
       "climatology_p95_c": 16.9,
-      "anomaly_c": 1.0,
-      "percentile": 57.6
+      "anomaly_c": -0.4,
+      "percentile": 47.2
     },
     {
       "geonames_id": 1526384,
@@ -1533,13 +1533,13 @@
       "lat": 43.255,
       "lon": 76.913,
       "tz": "Asia/Almaty",
-      "current_temp_c": 17.6,
+      "current_temp_c": 16.8,
       "daily_max_c": 19.3,
       "daily_min_c": 12.4,
       "climatology_mean_c": 15.6,
       "climatology_p95_c": 21.8,
-      "anomaly_c": 2.0,
-      "percentile": 69.1
+      "anomaly_c": 1.2,
+      "percentile": 62.0
     },
     {
       "geonames_id": 1217752,
@@ -1548,13 +1548,13 @@
       "lat": 41.299,
       "lon": 69.24,
       "tz": "Asia/Tashkent",
-      "current_temp_c": 20.6,
+      "current_temp_c": 20.0,
       "daily_max_c": 24.9,
       "daily_min_c": 16.5,
       "climatology_mean_c": 18.7,
       "climatology_p95_c": 24.7,
-      "anomaly_c": 1.9,
-      "percentile": 67.9
+      "anomaly_c": 1.3,
+      "percentile": 62.6
     },
     {
       "geonames_id": 3833367,
@@ -1563,13 +1563,13 @@
       "lat": -54.802,
       "lon": -68.303,
       "tz": "America/Argentina/Ushuaia",
-      "current_temp_c": -1.0,
+      "current_temp_c": 0.4,
       "daily_max_c": 1.9,
       "daily_min_c": -3.3,
       "climatology_mean_c": 1.2,
       "climatology_p95_c": 5.1,
-      "anomaly_c": -2.2,
-      "percentile": 16.5
+      "anomaly_c": -0.8,
+      "percentile": 35.7
     },
     {
       "geonames_id": 5879400,
@@ -1578,13 +1578,13 @@
       "lat": 61.218,
       "lon": -149.9,
       "tz": "America/Anchorage",
-      "current_temp_c": 2.8,
+      "current_temp_c": 2.9,
       "daily_max_c": 5.8,
       "daily_min_c": 2.7,
       "climatology_mean_c": 4.9,
       "climatology_p95_c": 8.3,
-      "anomaly_c": -2.1,
-      "percentile": 15.6
+      "anomaly_c": -2.0,
+      "percentile": 16.8
     }
   ]
 }
