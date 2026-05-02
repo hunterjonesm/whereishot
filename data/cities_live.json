@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "generated_at_utc": "2026-05-02T06:30:28+00:00",
+    "generated_at_utc": "2026-05-02T07:44:11+00:00",
     "model_run": "GFS 2026-05-02 00Z",
-    "climatology_version": null,
+    "climatology_version": "ERA5 1991-2020 v1",
     "grid_resolution_deg": 0.25,
     "synthetic": false,
     "n_cities": 105,
@@ -29,10 +29,10 @@
       "current_temp_c": 20.2,
       "daily_max_c": 22.1,
       "daily_min_c": 18.2,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 18.8,
+      "climatology_p95_c": 21.1,
+      "anomaly_c": 1.4,
+      "percentile": 89.1
     },
     {
       "geonames_id": 3448439,
@@ -44,10 +44,10 @@
       "current_temp_c": 21.3,
       "daily_max_c": 27.5,
       "daily_min_c": 18.4,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 19.3,
+      "climatology_p95_c": 23.1,
+      "anomaly_c": 2.0,
+      "percentile": 81.6
     },
     {
       "geonames_id": 3871336,
@@ -59,10 +59,10 @@
       "current_temp_c": 16.8,
       "daily_max_c": 25.6,
       "daily_min_c": 13.9,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 14.1,
+      "climatology_p95_c": 17.3,
+      "anomaly_c": 2.7,
+      "percentile": 90.2
     },
     {
       "geonames_id": 3435910,
@@ -74,10 +74,10 @@
       "current_temp_c": 19.3,
       "daily_max_c": 19.3,
       "daily_min_c": 12.4,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 15.9,
+      "climatology_p95_c": 20.3,
+      "anomaly_c": 3.4,
+      "percentile": 89.0
     },
     {
       "geonames_id": 3688689,
@@ -89,10 +89,10 @@
       "current_temp_c": 11.2,
       "daily_max_c": 17.8,
       "daily_min_c": 8.5,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 15.4,
+      "climatology_p95_c": 17.1,
+      "anomaly_c": -4.2,
+      "percentile": 0.0
     },
     {
       "geonames_id": 3646738,
@@ -104,10 +104,10 @@
       "current_temp_c": 21.0,
       "daily_max_c": 27.6,
       "daily_min_c": 19.7,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 24.7,
+      "climatology_p95_c": 26.5,
+      "anomaly_c": -3.7,
+      "percentile": 0.0
     },
     {
       "geonames_id": 3530597,
@@ -119,10 +119,10 @@
       "current_temp_c": 26.7,
       "daily_max_c": 28.9,
       "daily_min_c": 19.6,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 17.1,
+      "climatology_p95_c": 20.1,
+      "anomaly_c": 9.6,
+      "percentile": 100.0
     },
     {
       "geonames_id": 5128581,
@@ -134,10 +134,10 @@
       "current_temp_c": 14.2,
       "daily_max_c": 14.7,
       "daily_min_c": 10.7,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 14.0,
+      "climatology_p95_c": 20.6,
+      "anomaly_c": 0.2,
+      "percentile": 52.2
     },
     {
       "geonames_id": 4887398,
@@ -149,10 +149,10 @@
       "current_temp_c": 5.7,
       "daily_max_c": 11.3,
       "daily_min_c": 3.1,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 11.4,
+      "climatology_p95_c": 19.5,
+      "anomaly_c": -5.7,
+      "percentile": 8.4
     },
     {
       "geonames_id": 5391959,
@@ -164,10 +164,10 @@
       "current_temp_c": 13.5,
       "daily_max_c": 14.0,
       "daily_min_c": 12.2,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 14.5,
+      "climatology_p95_c": 18.8,
+      "anomaly_c": -1.0,
+      "percentile": 33.1
     },
     {
       "geonames_id": 5419384,
@@ -179,10 +179,10 @@
       "current_temp_c": 16.3,
       "daily_max_c": 21.4,
       "daily_min_c": 8.2,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 10.2,
+      "climatology_p95_c": 17.8,
+      "anomaly_c": 6.1,
+      "percentile": 91.2
     },
     {
       "geonames_id": 4684888,
@@ -194,10 +194,10 @@
       "current_temp_c": 16.8,
       "daily_max_c": 23.6,
       "daily_min_c": 12.9,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 20.8,
+      "climatology_p95_c": 26.0,
+      "anomaly_c": -4.0,
+      "percentile": 12.0
     },
     {
       "geonames_id": 5308655,
@@ -209,10 +209,10 @@
       "current_temp_c": 30.7,
       "daily_max_c": 32.0,
       "daily_min_c": 23.8,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 25.4,
+      "climatology_p95_c": 30.6,
+      "anomaly_c": 5.3,
+      "percentile": 93.0
     },
     {
       "geonames_id": 4699066,
@@ -224,10 +224,10 @@
       "current_temp_c": 16.3,
       "daily_max_c": 24.5,
       "daily_min_c": 12.8,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 22.8,
+      "climatology_p95_c": 27.1,
+      "anomaly_c": -6.5,
+      "percentile": 1.1
     },
     {
       "geonames_id": 5856195,
@@ -239,10 +239,10 @@
       "current_temp_c": 23.9,
       "daily_max_c": 24.0,
       "daily_min_c": 22.6,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 23.0,
+      "climatology_p95_c": 24.6,
+      "anomaly_c": 0.9,
+      "percentile": 81.5
     },
     {
       "geonames_id": 6167865,
@@ -254,10 +254,10 @@
       "current_temp_c": 7.4,
       "daily_max_c": 8.1,
       "daily_min_c": 1.2,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 10.0,
+      "climatology_p95_c": 16.7,
+      "anomaly_c": -2.6,
+      "percentile": 24.9
     },
     {
       "geonames_id": 6173331,
@@ -269,10 +269,10 @@
       "current_temp_c": 22.3,
       "daily_max_c": 24.6,
       "daily_min_c": 11.0,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 7.9,
+      "climatology_p95_c": 12.6,
+      "anomaly_c": 14.4,
+      "percentile": 100.0
     },
     {
       "geonames_id": 2643743,
@@ -284,10 +284,10 @@
       "current_temp_c": 13.1,
       "daily_max_c": 21.9,
       "daily_min_c": 11.1,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 10.7,
+      "climatology_p95_c": 15.7,
+      "anomaly_c": 2.4,
+      "percentile": 81.6
     },
     {
       "geonames_id": 2988507,
@@ -299,10 +299,10 @@
       "current_temp_c": 15.3,
       "daily_max_c": 24.2,
       "daily_min_c": 14.3,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 12.4,
+      "climatology_p95_c": 18.0,
+      "anomaly_c": 2.9,
+      "percentile": 83.2
     },
     {
       "geonames_id": 2950158,
@@ -314,10 +314,10 @@
       "current_temp_c": 13.7,
       "daily_max_c": 24.6,
       "daily_min_c": 11.9,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 12.4,
+      "climatology_p95_c": 18.2,
+      "anomaly_c": 1.3,
+      "percentile": 64.3
     },
     {
       "geonames_id": 3169070,
@@ -329,10 +329,10 @@
       "current_temp_c": 8.0,
       "daily_max_c": 21.5,
       "daily_min_c": 6.7,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 15.9,
+      "climatology_p95_c": 19.0,
+      "anomaly_c": -7.9,
+      "percentile": 0.0
     },
     {
       "geonames_id": 3117735,
@@ -344,10 +344,10 @@
       "current_temp_c": 16.6,
       "daily_max_c": 19.1,
       "daily_min_c": 13.9,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 14.9,
+      "climatology_p95_c": 20.5,
+      "anomaly_c": 1.7,
+      "percentile": 68.3
     },
     {
       "geonames_id": 2673730,
@@ -359,10 +359,10 @@
       "current_temp_c": 12.2,
       "daily_max_c": 23.1,
       "daily_min_c": 11.4,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 8.2,
+      "climatology_p95_c": 13.4,
+      "anomaly_c": 4.0,
+      "percentile": 90.3
     },
     {
       "geonames_id": 524901,
@@ -374,10 +374,10 @@
       "current_temp_c": 4.3,
       "daily_max_c": 14.6,
       "daily_min_c": 3.9,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 10.9,
+      "climatology_p95_c": 17.2,
+      "anomaly_c": -6.6,
+      "percentile": 7.1
     },
     {
       "geonames_id": 745044,
@@ -389,10 +389,10 @@
       "current_temp_c": 8.0,
       "daily_max_c": 12.1,
       "daily_min_c": 7.8,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 14.5,
+      "climatology_p95_c": 18.6,
+      "anomaly_c": -6.5,
+      "percentile": 0.3
     },
     {
       "geonames_id": 785842,
@@ -404,10 +404,10 @@
       "current_temp_c": 9.5,
       "daily_max_c": 13.0,
       "daily_min_c": 8.6,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 17.5,
+      "climatology_p95_c": 21.7,
+      "anomaly_c": -8.0,
+      "percentile": 0.0
     },
     {
       "geonames_id": 3067696,
@@ -419,10 +419,10 @@
       "current_temp_c": 9.9,
       "daily_max_c": 22.5,
       "daily_min_c": 8.6,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 12.7,
+      "climatology_p95_c": 18.5,
+      "anomaly_c": -2.8,
+      "percentile": 21.3
     },
     {
       "geonames_id": 756135,
@@ -434,10 +434,10 @@
       "current_temp_c": 11.0,
       "daily_max_c": 23.1,
       "daily_min_c": 9.9,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 12.9,
+      "climatology_p95_c": 19.0,
+      "anomaly_c": -1.9,
+      "percentile": 30.9
     },
     {
       "geonames_id": 2759794,
@@ -449,10 +449,10 @@
       "current_temp_c": 12.8,
       "daily_max_c": 21.0,
       "daily_min_c": 11.6,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 11.0,
+      "climatology_p95_c": 15.9,
+      "anomaly_c": 1.8,
+      "percentile": 76.1
     },
     {
       "geonames_id": 2761369,
@@ -464,10 +464,10 @@
       "current_temp_c": 9.9,
       "daily_max_c": 21.9,
       "daily_min_c": 8.9,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 14.0,
+      "climatology_p95_c": 19.5,
+      "anomaly_c": -4.1,
+      "percentile": 10.3
     },
     {
       "geonames_id": 2673722,
@@ -479,10 +479,10 @@
       "current_temp_c": 6.1,
       "daily_max_c": 17.2,
       "daily_min_c": 5.7,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 7.5,
+      "climatology_p95_c": 13.2,
+      "anomaly_c": -1.4,
+      "percentile": 33.1
     },
     {
       "geonames_id": 3413829,
@@ -494,10 +494,10 @@
       "current_temp_c": 1.8,
       "daily_max_c": 5.9,
       "daily_min_c": 1.8,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 5.2,
+      "climatology_p95_c": 9.6,
+      "anomaly_c": -3.4,
+      "percentile": 9.9
     },
     {
       "geonames_id": 2964574,
@@ -509,10 +509,10 @@
       "current_temp_c": 8.2,
       "daily_max_c": 15.2,
       "daily_min_c": 7.3,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 10.1,
+      "climatology_p95_c": 13.7,
+      "anomaly_c": -1.9,
+      "percentile": 18.4
     },
     {
       "geonames_id": 2618425,
@@ -524,10 +524,10 @@
       "current_temp_c": 11.7,
       "daily_max_c": 21.6,
       "daily_min_c": 10.8,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 9.9,
+      "climatology_p95_c": 14.7,
+      "anomaly_c": 1.8,
+      "percentile": 74.5
     },
     {
       "geonames_id": 2267057,
@@ -539,10 +539,10 @@
       "current_temp_c": 14.9,
       "daily_max_c": 19.6,
       "daily_min_c": 13.7,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 15.5,
+      "climatology_p95_c": 19.3,
+      "anomaly_c": -0.6,
+      "percentile": 37.9
     },
     {
       "geonames_id": 360630,
@@ -554,10 +554,10 @@
       "current_temp_c": 21.3,
       "daily_max_c": 34.1,
       "daily_min_c": 20.3,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 23.2,
+      "climatology_p95_c": 28.2,
+      "anomaly_c": -1.9,
+      "percentile": 24.4
     },
     {
       "geonames_id": 2332459,
@@ -569,10 +569,10 @@
       "current_temp_c": 28.8,
       "daily_max_c": 29.0,
       "daily_min_c": 28.6,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 27.3,
+      "climatology_p95_c": 28.7,
+      "anomaly_c": 1.5,
+      "percentile": 95.1
     },
     {
       "geonames_id": 993800,
@@ -584,10 +584,10 @@
       "current_temp_c": 12.5,
       "daily_max_c": 22.1,
       "daily_min_c": 11.3,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 15.1,
+      "climatology_p95_c": 18.7,
+      "anomaly_c": -2.6,
+      "percentile": 12.3
     },
     {
       "geonames_id": 3369157,
@@ -599,10 +599,10 @@
       "current_temp_c": 15.0,
       "daily_max_c": 16.5,
       "daily_min_c": 14.3,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 15.3,
+      "climatology_p95_c": 17.0,
+      "anomaly_c": -0.3,
+      "percentile": 38.6
     },
     {
       "geonames_id": 184745,
@@ -614,10 +614,10 @@
       "current_temp_c": 15.4,
       "daily_max_c": 20.5,
       "daily_min_c": 14.6,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 19.2,
+      "climatology_p95_c": 20.5,
+      "anomaly_c": -3.8,
+      "percentile": 0.0
     },
     {
       "geonames_id": 344979,
@@ -629,10 +629,10 @@
       "current_temp_c": 15.5,
       "daily_max_c": 23.5,
       "daily_min_c": 14.8,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 17.0,
+      "climatology_p95_c": 19.0,
+      "anomaly_c": -1.5,
+      "percentile": 9.7
     },
     {
       "geonames_id": 2542997,
@@ -644,10 +644,10 @@
       "current_temp_c": 15.3,
       "daily_max_c": 22.6,
       "daily_min_c": 14.4,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 17.9,
+      "climatology_p95_c": 20.5,
+      "anomaly_c": -2.6,
+      "percentile": 4.7
     },
     {
       "geonames_id": 2542543,
@@ -659,10 +659,10 @@
       "current_temp_c": 18.4,
       "daily_max_c": 26.5,
       "daily_min_c": 16.2,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 19.4,
+      "climatology_p95_c": 25.2,
+      "anomaly_c": -1.0,
+      "percentile": 38.5
     },
     {
       "geonames_id": 2464470,
@@ -674,10 +674,10 @@
       "current_temp_c": 15.5,
       "daily_max_c": 19.2,
       "daily_min_c": 13.6,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 18.3,
+      "climatology_p95_c": 21.8,
+      "anomaly_c": -2.8,
+      "percentile": 7.8
     },
     {
       "geonames_id": 2464461,
@@ -689,10 +689,10 @@
       "current_temp_c": 17.4,
       "daily_max_c": 22.1,
       "daily_min_c": 16.9,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 17.3,
+      "climatology_p95_c": 21.1,
+      "anomaly_c": 0.1,
+      "percentile": 51.1
     },
     {
       "geonames_id": 379252,
@@ -704,10 +704,10 @@
       "current_temp_c": 30.1,
       "daily_max_c": 39.6,
       "daily_min_c": 28.8,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 33.5,
+      "climatology_p95_c": 36.7,
+      "anomaly_c": -3.4,
+      "percentile": 6.0
     },
     {
       "geonames_id": 2253354,
@@ -719,10 +719,10 @@
       "current_temp_c": 20.7,
       "daily_max_c": 21.2,
       "daily_min_c": 20.4,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 21.4,
+      "climatology_p95_c": 22.9,
+      "anomaly_c": -0.7,
+      "percentile": 21.9
     },
     {
       "geonames_id": 2287781,
@@ -734,10 +734,10 @@
       "current_temp_c": 28.1,
       "daily_max_c": 28.9,
       "daily_min_c": 27.8,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 27.0,
+      "climatology_p95_c": 28.2,
+      "anomaly_c": 1.1,
+      "percentile": 92.2
     },
     {
       "geonames_id": 2306104,
@@ -749,10 +749,10 @@
       "current_temp_c": 28.4,
       "daily_max_c": 30.2,
       "daily_min_c": 28.0,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 28.1,
+      "climatology_p95_c": 29.4,
+      "anomaly_c": 0.3,
+      "percentile": 64.2
     },
     {
       "geonames_id": 160263,
@@ -764,10 +764,10 @@
       "current_temp_c": 22.5,
       "daily_max_c": 29.6,
       "daily_min_c": 22.1,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 25.6,
+      "climatology_p95_c": 27.0,
+      "anomaly_c": -3.1,
+      "percentile": 0.0
     },
     {
       "geonames_id": 232422,
@@ -779,10 +779,10 @@
       "current_temp_c": 17.6,
       "daily_max_c": 20.5,
       "daily_min_c": 17.4,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 21.2,
+      "climatology_p95_c": 22.5,
+      "anomaly_c": -3.6,
+      "percentile": 0.0
     },
     {
       "geonames_id": 2314302,
@@ -794,10 +794,10 @@
       "current_temp_c": 24.9,
       "daily_max_c": 31.1,
       "daily_min_c": 24.1,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 26.0,
+      "climatology_p95_c": 27.4,
+      "anomaly_c": -1.1,
+      "percentile": 12.3
     },
     {
       "geonames_id": 890299,
@@ -809,10 +809,10 @@
       "current_temp_c": 14.5,
       "daily_max_c": 26.2,
       "daily_min_c": 13.7,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 17.9,
+      "climatology_p95_c": 20.5,
+      "anomaly_c": -3.4,
+      "percentile": 1.6
     },
     {
       "geonames_id": 1040652,
@@ -824,10 +824,10 @@
       "current_temp_c": 21.5,
       "daily_max_c": 30.8,
       "daily_min_c": 20.0,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 22.4,
+      "climatology_p95_c": 25.2,
+      "anomaly_c": -0.9,
+      "percentile": 30.2
     },
     {
       "geonames_id": 3354077,
@@ -839,10 +839,10 @@
       "current_temp_c": 12.1,
       "daily_max_c": 25.0,
       "daily_min_c": 11.0,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 16.9,
+      "climatology_p95_c": 19.8,
+      "anomaly_c": -4.8,
+      "percentile": 0.4
     },
     {
       "geonames_id": 292223,
@@ -854,10 +854,10 @@
       "current_temp_c": 27.7,
       "daily_max_c": 29.5,
       "daily_min_c": 27.6,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 29.1,
+      "climatology_p95_c": 32.5,
+      "anomaly_c": -1.4,
+      "percentile": 25.1
     },
     {
       "geonames_id": 108410,
@@ -869,10 +869,10 @@
       "current_temp_c": 26.0,
       "daily_max_c": 37.9,
       "daily_min_c": 25.1,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 29.7,
+      "climatology_p95_c": 33.9,
+      "anomaly_c": -3.7,
+      "percentile": 11.9
     },
     {
       "geonames_id": 281184,
@@ -884,10 +884,10 @@
       "current_temp_c": 13.7,
       "daily_max_c": 25.8,
       "daily_min_c": 13.1,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 19.9,
+      "climatology_p95_c": 26.2,
+      "anomaly_c": -6.2,
+      "percentile": 2.8
     },
     {
       "geonames_id": 250441,
@@ -899,10 +899,10 @@
       "current_temp_c": 12.7,
       "daily_max_c": 24.8,
       "daily_min_c": 12.1,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 21.0,
+      "climatology_p95_c": 27.2,
+      "anomaly_c": -8.3,
+      "percentile": 1.2
     },
     {
       "geonames_id": 276781,
@@ -914,10 +914,10 @@
       "current_temp_c": 18.6,
       "daily_max_c": 20.2,
       "daily_min_c": 18.4,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 19.4,
+      "climatology_p95_c": 22.4,
+      "anomaly_c": -0.8,
+      "percentile": 31.2
     },
     {
       "geonames_id": 98182,
@@ -929,10 +929,10 @@
       "current_temp_c": 25.9,
       "daily_max_c": 34.5,
       "daily_min_c": 22.7,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 27.8,
+      "climatology_p95_c": 33.1,
+      "anomaly_c": -1.9,
+      "percentile": 28.3
     },
     {
       "geonames_id": 112931,
@@ -944,10 +944,10 @@
       "current_temp_c": 15.9,
       "daily_max_c": 22.1,
       "daily_min_c": 15.9,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 15.5,
+      "climatology_p95_c": 20.4,
+      "anomaly_c": 0.4,
+      "percentile": 55.0
     },
     {
       "geonames_id": 290030,
@@ -959,10 +959,10 @@
       "current_temp_c": 26.8,
       "daily_max_c": 35.3,
       "daily_min_c": 26.8,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 28.3,
+      "climatology_p95_c": 31.4,
+      "anomaly_c": -1.5,
+      "percentile": 21.0
     },
     {
       "geonames_id": 285787,
@@ -974,10 +974,10 @@
       "current_temp_c": 26.3,
       "daily_max_c": 26.8,
       "daily_min_c": 25.7,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 29.7,
+      "climatology_p95_c": 33.7,
+      "anomaly_c": -3.4,
+      "percentile": 10.4
     },
     {
       "geonames_id": 1275339,
@@ -989,10 +989,10 @@
       "current_temp_c": 26.9,
       "daily_max_c": 30.7,
       "daily_min_c": 26.9,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 28.8,
+      "climatology_p95_c": 30.1,
+      "anomaly_c": -1.9,
+      "percentile": 0.7
     },
     {
       "geonames_id": 1273294,
@@ -1004,10 +1004,10 @@
       "current_temp_c": 30.0,
       "daily_max_c": 41.1,
       "daily_min_c": 30.0,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 31.8,
+      "climatology_p95_c": 35.3,
+      "anomaly_c": -1.8,
+      "percentile": 21.2
     },
     {
       "geonames_id": 1264527,
@@ -1019,10 +1019,10 @@
       "current_temp_c": 28.6,
       "daily_max_c": 34.7,
       "daily_min_c": 28.6,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 30.6,
+      "climatology_p95_c": 32.1,
+      "anomaly_c": -2.0,
+      "percentile": 2.4
     },
     {
       "geonames_id": 1275004,
@@ -1034,10 +1034,10 @@
       "current_temp_c": 25.5,
       "daily_max_c": 35.2,
       "daily_min_c": 23.6,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 30.1,
+      "climatology_p95_c": 32.8,
+      "anomaly_c": -4.6,
+      "percentile": 0.8
     },
     {
       "geonames_id": 1277333,
@@ -1049,10 +1049,10 @@
       "current_temp_c": 23.8,
       "daily_max_c": 35.0,
       "daily_min_c": 22.7,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 27.0,
+      "climatology_p95_c": 29.5,
+      "anomaly_c": -3.2,
+      "percentile": 1.7
     },
     {
       "geonames_id": 1176615,
@@ -1064,10 +1064,10 @@
       "current_temp_c": 28.2,
       "daily_max_c": 29.6,
       "daily_min_c": 27.7,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 29.6,
+      "climatology_p95_c": 32.0,
+      "anomaly_c": -1.4,
+      "percentile": 12.7
     },
     {
       "geonames_id": 1185241,
@@ -1079,10 +1079,10 @@
       "current_temp_c": 23.1,
       "daily_max_c": 33.2,
       "daily_min_c": 21.4,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 28.1,
+      "climatology_p95_c": 31.5,
+      "anomaly_c": -5.0,
+      "percentile": 1.3
     },
     {
       "geonames_id": 1283240,
@@ -1094,10 +1094,10 @@
       "current_temp_c": 14.2,
       "daily_max_c": 20.4,
       "daily_min_c": 14.2,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 19.6,
+      "climatology_p95_c": 22.9,
+      "anomaly_c": -5.4,
+      "percentile": 0.3
     },
     {
       "geonames_id": 1248991,
@@ -1109,10 +1109,10 @@
       "current_temp_c": 29.4,
       "daily_max_c": 29.7,
       "daily_min_c": 29.0,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 28.1,
+      "climatology_p95_c": 29.2,
+      "anomaly_c": 1.3,
+      "percentile": 96.2
     },
     {
       "geonames_id": 1880252,
@@ -1124,10 +1124,10 @@
       "current_temp_c": 27.4,
       "daily_max_c": 29.4,
       "daily_min_c": 27.3,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 27.5,
+      "climatology_p95_c": 28.7,
+      "anomaly_c": -0.1,
+      "percentile": 46.7
     },
     {
       "geonames_id": 1735161,
@@ -1139,10 +1139,10 @@
       "current_temp_c": 23.9,
       "daily_max_c": 31.6,
       "daily_min_c": 23.0,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 27.5,
+      "climatology_p95_c": 28.8,
+      "anomaly_c": -3.6,
+      "percentile": 0.0
     },
     {
       "geonames_id": 1609350,
@@ -1154,10 +1154,10 @@
       "current_temp_c": 30.0,
       "daily_max_c": 36.8,
       "daily_min_c": 30.0,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 30.9,
+      "climatology_p95_c": 33.2,
+      "anomaly_c": -0.9,
+      "percentile": 30.4
     },
     {
       "geonames_id": 1581130,
@@ -1169,10 +1169,10 @@
       "current_temp_c": 24.1,
       "daily_max_c": 34.1,
       "daily_min_c": 24.1,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 26.9,
+      "climatology_p95_c": 30.6,
+      "anomaly_c": -2.8,
+      "percentile": 14.2
     },
     {
       "geonames_id": 1566083,
@@ -1184,10 +1184,10 @@
       "current_temp_c": 29.3,
       "daily_max_c": 35.3,
       "daily_min_c": 27.3,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 29.8,
+      "climatology_p95_c": 32.1,
+      "anomaly_c": -0.5,
+      "percentile": 35.8
     },
     {
       "geonames_id": 1642911,
@@ -1199,10 +1199,10 @@
       "current_temp_c": 27.1,
       "daily_max_c": 32.3,
       "daily_min_c": 27.1,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 27.6,
+      "climatology_p95_c": 28.6,
+      "anomaly_c": -0.5,
+      "percentile": 19.7
     },
     {
       "geonames_id": 1701668,
@@ -1214,10 +1214,10 @@
       "current_temp_c": 28.6,
       "daily_max_c": 34.0,
       "daily_min_c": 26.6,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 29.3,
+      "climatology_p95_c": 30.4,
+      "anomaly_c": -0.7,
+      "percentile": 21.0
     },
     {
       "geonames_id": 1821306,
@@ -1229,10 +1229,10 @@
       "current_temp_c": 28.4,
       "daily_max_c": 36.7,
       "daily_min_c": 27.0,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 30.5,
+      "climatology_p95_c": 32.9,
+      "anomaly_c": -2.1,
+      "percentile": 8.6
     },
     {
       "geonames_id": 1850147,
@@ -1244,10 +1244,10 @@
       "current_temp_c": 21.8,
       "daily_max_c": 26.5,
       "daily_min_c": 18.2,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 16.6,
+      "climatology_p95_c": 20.9,
+      "anomaly_c": 5.2,
+      "percentile": 97.1
     },
     {
       "geonames_id": 1853909,
@@ -1259,10 +1259,10 @@
       "current_temp_c": 17.0,
       "daily_max_c": 21.8,
       "daily_min_c": 16.4,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 17.7,
+      "climatology_p95_c": 21.8,
+      "anomaly_c": -0.7,
+      "percentile": 39.5
     },
     {
       "geonames_id": 1835848,
@@ -1274,10 +1274,10 @@
       "current_temp_c": 16.2,
       "daily_max_c": 21.6,
       "daily_min_c": 12.4,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 15.4,
+      "climatology_p95_c": 20.0,
+      "anomaly_c": 0.8,
+      "percentile": 61.3
     },
     {
       "geonames_id": 1816670,
@@ -1289,10 +1289,10 @@
       "current_temp_c": 18.2,
       "daily_max_c": 24.4,
       "daily_min_c": 13.3,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 18.9,
+      "climatology_p95_c": 24.3,
+      "anomaly_c": -0.7,
+      "percentile": 41.5
     },
     {
       "geonames_id": 1796236,
@@ -1304,10 +1304,10 @@
       "current_temp_c": 18.4,
       "daily_max_c": 23.6,
       "daily_min_c": 16.2,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 19.0,
+      "climatology_p95_c": 24.5,
+      "anomaly_c": -0.6,
+      "percentile": 42.2
     },
     {
       "geonames_id": 1809858,
@@ -1319,10 +1319,10 @@
       "current_temp_c": 25.2,
       "daily_max_c": 28.9,
       "daily_min_c": 25.2,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 25.2,
+      "climatology_p95_c": 28.6,
+      "anomaly_c": 0.0,
+      "percentile": 50.8
     },
     {
       "geonames_id": 1815286,
@@ -1334,10 +1334,10 @@
       "current_temp_c": 16.2,
       "daily_max_c": 23.0,
       "daily_min_c": 16.2,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 21.6,
+      "climatology_p95_c": 27.2,
+      "anomaly_c": -5.4,
+      "percentile": 6.0
     },
     {
       "geonames_id": 1819729,
@@ -1349,10 +1349,10 @@
       "current_temp_c": 23.7,
       "daily_max_c": 25.2,
       "daily_min_c": 23.7,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 24.9,
+      "climatology_p95_c": 27.9,
+      "anomaly_c": -1.2,
+      "percentile": 27.4
     },
     {
       "geonames_id": 1668341,
@@ -1364,10 +1364,10 @@
       "current_temp_c": 23.1,
       "daily_max_c": 28.4,
       "daily_min_c": 22.4,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 23.4,
+      "climatology_p95_c": 26.6,
+      "anomaly_c": -0.3,
+      "percentile": 44.4
     },
     {
       "geonames_id": 2028462,
@@ -1379,10 +1379,10 @@
       "current_temp_c": 3.2,
       "daily_max_c": 9.9,
       "daily_min_c": 2.8,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 6.0,
+      "climatology_p95_c": 14.1,
+      "anomaly_c": -2.8,
+      "percentile": 28.8
     },
     {
       "geonames_id": 2147714,
@@ -1394,10 +1394,10 @@
       "current_temp_c": 21.7,
       "daily_max_c": 22.8,
       "daily_min_c": 17.3,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 15.9,
+      "climatology_p95_c": 19.5,
+      "anomaly_c": 5.8,
+      "percentile": 99.7
     },
     {
       "geonames_id": 2158177,
@@ -1409,10 +1409,10 @@
       "current_temp_c": 20.3,
       "daily_max_c": 23.2,
       "daily_min_c": 17.7,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 12.9,
+      "climatology_p95_c": 18.0,
+      "anomaly_c": 7.4,
+      "percentile": 99.6
     },
     {
       "geonames_id": 2174003,
@@ -1424,10 +1424,10 @@
       "current_temp_c": 20.9,
       "daily_max_c": 24.3,
       "daily_min_c": 16.6,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 19.1,
+      "climatology_p95_c": 21.8,
+      "anomaly_c": 1.8,
+      "percentile": 86.2
     },
     {
       "geonames_id": 2063523,
@@ -1439,10 +1439,10 @@
       "current_temp_c": 11.6,
       "daily_max_c": 17.7,
       "daily_min_c": 11.6,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 18.4,
+      "climatology_p95_c": 22.3,
+      "anomaly_c": -6.8,
+      "percentile": 0.1
     },
     {
       "geonames_id": 2078025,
@@ -1454,10 +1454,10 @@
       "current_temp_c": 21.6,
       "daily_max_c": 21.6,
       "daily_min_c": 15.0,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 15.6,
+      "climatology_p95_c": 20.1,
+      "anomaly_c": 6.0,
+      "percentile": 99.5
     },
     {
       "geonames_id": 2179537,
@@ -1469,10 +1469,10 @@
       "current_temp_c": 17.2,
       "daily_max_c": 17.2,
       "daily_min_c": 10.5,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 15.9,
+      "climatology_p95_c": 18.5,
+      "anomaly_c": 1.3,
+      "percentile": 79.1
     },
     {
       "geonames_id": 2179670,
@@ -1484,10 +1484,10 @@
       "current_temp_c": 14.2,
       "daily_max_c": 14.2,
       "daily_min_c": 11.1,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 13.4,
+      "climatology_p95_c": 16.0,
+      "anomaly_c": 0.8,
+      "percentile": 68.5
     },
     {
       "geonames_id": 2013348,
@@ -1499,10 +1499,10 @@
       "current_temp_c": 8.2,
       "daily_max_c": 9.3,
       "daily_min_c": 7.2,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 8.8,
+      "climatology_p95_c": 12.5,
+      "anomaly_c": -0.6,
+      "percentile": 39.8
     },
     {
       "geonames_id": 1502026,
@@ -1514,10 +1514,10 @@
       "current_temp_c": 14.1,
       "daily_max_c": 21.5,
       "daily_min_c": 7.5,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 8.1,
+      "climatology_p95_c": 17.1,
+      "anomaly_c": 6.0,
+      "percentile": 86.8
     },
     {
       "geonames_id": 1486209,
@@ -1529,10 +1529,10 @@
       "current_temp_c": 3.2,
       "daily_max_c": 10.2,
       "daily_min_c": 2.9,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 7.7,
+      "climatology_p95_c": 16.9,
+      "anomaly_c": -4.5,
+      "percentile": 20.0
     },
     {
       "geonames_id": 1526384,
@@ -1544,10 +1544,10 @@
       "current_temp_c": 14.0,
       "daily_max_c": 22.3,
       "daily_min_c": 12.7,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 15.6,
+      "climatology_p95_c": 21.8,
+      "anomaly_c": -1.6,
+      "percentile": 35.3
     },
     {
       "geonames_id": 1217752,
@@ -1559,10 +1559,10 @@
       "current_temp_c": 16.3,
       "daily_max_c": 22.8,
       "daily_min_c": 16.3,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 18.7,
+      "climatology_p95_c": 24.7,
+      "anomaly_c": -2.4,
+      "percentile": 28.5
     },
     {
       "geonames_id": 3833367,
@@ -1574,10 +1574,10 @@
       "current_temp_c": -2.7,
       "daily_max_c": 1.9,
       "daily_min_c": -5.2,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 1.2,
+      "climatology_p95_c": 5.1,
+      "anomaly_c": -3.9,
+      "percentile": 4.4
     },
     {
       "geonames_id": 5879400,
@@ -1589,10 +1589,10 @@
       "current_temp_c": 5.3,
       "daily_max_c": 5.3,
       "daily_min_c": 2.1,
-      "climatology_mean_c": null,
-      "climatology_p95_c": null,
-      "anomaly_c": null,
-      "percentile": null
+      "climatology_mean_c": 4.9,
+      "climatology_p95_c": 8.3,
+      "anomaly_c": 0.4,
+      "percentile": 57.8
     }
   ]
 }
