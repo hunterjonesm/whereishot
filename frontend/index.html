@@ -412,7 +412,7 @@
           <span class="num">01</span>
           <span>
             <div class="name">Current temperature</div>
-            <div class="desc">Latest GFS analysis, 2-metre air temp</div>
+            <div class="desc">Model nowcast — GFS forecast hour valid right now, 2 m air temp</div>
           </span>
         </button>
         <button class="metric-option" data-metric="percentile" aria-pressed="false">
@@ -449,7 +449,7 @@
 
     <div class="colophon">
       <strong>Data:</strong> NOAA GFS 0.25° (current &amp; forecast) · ECMWF ERA5 (climatology) · GeoNames (cities, CC-BY 4.0).<br>
-      <strong>Cadence:</strong> 3-hourly · <strong>Methodology:</strong> <a href="#methodology">view</a>.
+      <strong>Cadence:</strong> hourly · <strong>Methodology:</strong> <a href="../docs/methodology.md">view</a>.
     </div>
   </aside>
 
@@ -598,8 +598,20 @@ async function loadData() {
   if (cityData.metadata?.synthetic) {
     document.getElementById('synthetic-banner').hidden = false;
   }
-  document.getElementById('model-run').textContent =
-    cityData.metadata?.model_run ?? `Synthetic · ${cityData.metadata?.climatology_version ?? ''}`;
+  // Show cycle identity + valid time of the nowcast field, so users can
+  // see how stale the "current temperature" actually is.
+  const meta = cityData.metadata ?? {};
+  let runLine;
+  if (meta.synthetic) {
+    runLine = `Synthetic · ${meta.climatology_version ?? ''}`;
+  } else {
+    const validShort = meta.nowcast_valid_utc
+      ? meta.nowcast_valid_utc.slice(0, 16).replace('T', ' ') + ' UTC'
+      : null;
+    runLine = meta.model_run ?? '';
+    if (validShort) runLine += `<br><span style="color:var(--ink-faint)">valid ${validShort}</span>`;
+  }
+  document.getElementById('model-run').innerHTML = runLine;
   return cityData;
 }
 

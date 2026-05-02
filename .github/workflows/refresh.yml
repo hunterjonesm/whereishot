@@ -2,12 +2,10 @@ name: Refresh heat map data
 
 on:
   schedule:
-    # Every 3 hours, offset 1h after each GFS cycle (cycles run 00/06/12/18Z;
-    # data is available ~3-4h later, so we run at 04, 07, 10, 13, 16, 19, 22, 01 UTC).
-    # GFS only releases new data every 6 hours, but running 3-hourly means we
-    # always show data within ~3-6 hours of issue, and lets us recover quickly
-    # from any failed run.
-    - cron: '0 1,4,7,10,13,16,19,22 * * *'
+    # Hourly. The fetcher always picks the latest *available* GFS cycle and
+    # the forecast hour whose valid time is closest to clock-now, so an
+    # hourly cron means displayed data is never more than ~60 minutes stale.
+    - cron: '15 * * * *'
   workflow_dispatch:  # manual trigger button in the Actions UI
 
 # Prevent overlapping runs (a slow run shouldn't be lapped by the next cron)

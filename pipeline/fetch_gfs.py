@@ -4,28 +4,28 @@ ERA5 climatology, and write data/cities_live.json.
 
 Pipeline steps:
   1. Determine the most recent available GFS cycle (00/06/12/18Z).
-  2. Download F000 (analysis) + F003..F024 (forecasts), variable TMP at 2 m AGL,
-     using the GRIB filter on NOMADS so we only pull the bytes we need
-     (~150KB/file × 9 files = under 2 MB total — well within Actions limits).
-  3. Open as xarray, regrid is unnecessary (GFS 0.25° already matches our
-     climatology grid).
-  4. Sample at city lon/lat using nearest-neighbour.
-  5. Compute current_temp_c (F000), daily_max_c, daily_min_c (over 24h window).
-  6. Look up day-of-year climatology percentile from precomputed parquet.
-  7. Write JSON with metadata.
+  2. Pick a "nowcast" forecast hour whose valid time is closest to clock-now.
+     This is what gets reported as `current_temp_c` — it answers
+     "what is the model's best estimate for right now," not "what was the
+     analysis at the cycle's start." For a 00Z run viewed at 08:30 UTC,
+     nowcast_fhr = 9, valid 09:00 UTC.
+  3. Build a 24-hour forward window starting at the nowcast hour, sampled
+     hourly. From this we derive `daily_max_c` and `daily_min_c` — the
+     warmest/coolest moment in the next 24 hours, including now.
+  4. Download just the bytes we need from NOAA NOMADS using the GRIB filter
+     (~200 KB per file × ~25 files = ~5 MB total).
+  5. Open as xarray, sample at city points, join with ERA5 climatology to
+     compute anomaly + percentile.
+  6. Write JSON with full provenance metadata.
 
 Usage:
   python pipeline/fetch_gfs.py --cities pipeline/cities.csv \
       --climatology climatology/era5_doy_clim.parquet \
       --output data/cities_live.json
-
-This script is designed to be idempotent and to fail loudly. If the latest
-GFS cycle is not yet available, it will fall back to the previous one.
 """
 from __future__ import annotations
 
 import argparse
-import io
 import json
 import logging
 import sys
@@ -52,9 +52,8 @@ NOMADS_FILTER = (
     "&dir=%2Fgfs.{date}%2F{cycle:02d}%2Fatmos"
 )
 
-# Forecast hours we sample. F000 = analysis, F003..F024 covers the next 24 h
-# at 3-hour spacing — sufficient for daily max/min over the upcoming 24h.
-FORECAST_HOURS = [0, 3, 6, 9, 12, 15, 18, 21, 24]
+# How far in the future the nowcast window extends. 24 hours = next-day max/min.
+WINDOW_HOURS = 24
 
 
 @dataclass
@@ -74,14 +73,13 @@ class GFSCycle:
 
 
 def latest_available_cycle(now_utc: datetime | None = None) -> GFSCycle:
-    """GFS cycles run at 00/06/12/18Z and become available ~3-4 hours later.
+    """GFS cycles run at 00/06/12/18Z and become available ~3.5-5 hours later.
 
     We assume a 4-hour minimum lag for safety, then walk back through cycles
     until we find one that exists on NOMADS.
     """
     now = now_utc or datetime.now(timezone.utc)
     candidate = now - timedelta(hours=4)
-    # Round down to nearest 6-hour cycle
     cycle_hour = (candidate.hour // 6) * 6
     candidate = candidate.replace(hour=cycle_hour, minute=0, second=0, microsecond=0)
 
@@ -105,6 +103,28 @@ def cycle_exists(cyc: GFSCycle) -> bool:
         return False
 
 
+def pick_forecast_hours(cyc: GFSCycle, now_utc: datetime | None = None) -> tuple[int, list[int]]:
+    """Decide which forecast hours to fetch.
+
+    Returns (nowcast_fhr, all_fhrs_to_fetch).
+
+    nowcast_fhr is the cycle-relative forecast hour whose valid time is
+    nearest to right now — used as `current_temp_c`.
+
+    all_fhrs_to_fetch covers nowcast_fhr through nowcast_fhr+WINDOW_HOURS,
+    hourly, capped at 120 (where GFS hourly data ends).
+    """
+    now = now_utc or datetime.now(timezone.utc)
+    hours_since_cycle = (now - cyc.datetime_utc).total_seconds() / 3600
+    # Use floor(x + 0.5) for round-half-up; Python's built-in round() does
+    # banker's rounding which gives F008 instead of F009 at 8h30m past cycle.
+    import math
+    nowcast_fhr = max(0, min(120, int(math.floor(hours_since_cycle + 0.5))))
+    end_fhr = min(120, nowcast_fhr + WINDOW_HOURS)
+    fhrs = list(range(nowcast_fhr, end_fhr + 1))
+    return nowcast_fhr, fhrs
+
+
 def fetch_grib(cyc: GFSCycle, fhr: int) -> bytes:
     """Download a single forecast hour as raw GRIB2 bytes."""
     url = NOMADS_FILTER.format(cycle=cyc.cycle, fhr=fhr, date=cyc.date)
@@ -116,22 +136,16 @@ def fetch_grib(cyc: GFSCycle, fhr: int) -> bytes:
 
 
 def open_grib(buf: bytes) -> xr.DataArray:
-    """Open a GRIB2 byte buffer as an xarray DataArray of 2m temperature in °C.
-
-    Uses cfgrib via xarray. Requires `eccodes` system library to be installed.
-    GitHub Actions: install via `apt install libeccodes-dev` in the workflow.
-    """
-    # cfgrib needs a real file path; write to a tempfile.
+    """Open a GRIB2 byte buffer as an xarray DataArray of 2m temperature in °C."""
     import tempfile
     with tempfile.NamedTemporaryFile(suffix=".grib2", delete=False) as f:
         f.write(buf)
         path = f.name
     try:
         ds = xr.open_dataset(path, engine="cfgrib")
-        # GFS 2m temperature variable name is 't2m'
         var = "t2m" if "t2m" in ds.data_vars else list(ds.data_vars)[0]
-        da = ds[var] - 273.15  # Kelvin → Celsius
-        # GFS longitude is 0..360; convert to -180..180 for sane interpolation
+        da = ds[var] - 273.15
+        # GFS longitude is 0..360; convert to -180..180
         da = da.assign_coords(longitude=(((da.longitude + 180) % 360) - 180))
         da = da.sortby("longitude")
         return da
@@ -140,24 +154,15 @@ def open_grib(buf: bytes) -> xr.DataArray:
 
 
 def sample_at_cities(da: xr.DataArray, cities: pd.DataFrame) -> np.ndarray:
-    """Nearest-neighbour sample of a 2D grid at a list of (lat, lon) points.
-
-    GFS 0.25° is fine enough that nearest-neighbour is ~14 km offset worst case;
-    bilinear would be marginally more accurate but adds complexity. Stick with
-    nearest for the prototype.
-    """
+    """Nearest-neighbour sample of a 2D grid at a list of (lat, lon) points."""
     lats = xr.DataArray(cities["lat"].values, dims="city")
     lons = xr.DataArray(cities["lon"].values, dims="city")
     sampled = da.sel(latitude=lats, longitude=lons, method="nearest")
     return sampled.values
 
 
-def load_climatology(path: Path) -> pd.DataFrame:
-    """Load precomputed ERA5 day-of-year climatology, sampled at city points.
-
-    Expected columns: geonames_id, doy, mean_c, p95_c, p99_c, std_c
-    Produced by the Earth Engine notebook in climatology/.
-    """
+def load_climatology(path: Path) -> pd.DataFrame | None:
+    """Load precomputed ERA5 day-of-year climatology, sampled at city points."""
     if not path.exists():
         log.warning(f"Climatology file not found at {path}; percentiles will be null")
         return None
@@ -165,11 +170,7 @@ def load_climatology(path: Path) -> pd.DataFrame:
 
 
 def percentile_from_normal(value: float, mean: float, std: float) -> float:
-    """Approximate percentile assuming a Gaussian climatology distribution.
-
-    Cheap and good enough for a top-line metric; the precomputed climatology
-    can also store empirical percentiles if we want to be more precise later.
-    """
+    """Approximate percentile assuming a Gaussian climatology distribution."""
     if std is None or std <= 0:
         return float("nan")
     from math import erf, sqrt
@@ -221,8 +222,7 @@ def build_records(
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cities", type=Path, required=True,
-                    help="CSV with columns: geonames_id,name,country,lat,lon,tz")
+    ap.add_argument("--cities", type=Path, required=True)
     ap.add_argument("--climatology", type=Path,
                     default=Path("climatology/era5_doy_clim.parquet"))
     ap.add_argument("--output", type=Path, required=True)
@@ -232,37 +232,43 @@ def main():
     log.info(f"Loaded {len(cities)} cities")
 
     cyc = latest_available_cycle()
+    nowcast_fhr, fhrs_to_fetch = pick_forecast_hours(cyc)
+    nowcast_valid = cyc.datetime_utc + timedelta(hours=nowcast_fhr)
+    log.info(f"Nowcast: F{nowcast_fhr:03d} valid {nowcast_valid.isoformat()}")
+    log.info(f"Window: F{fhrs_to_fetch[0]:03d}..F{fhrs_to_fetch[-1]:03d} "
+             f"({len(fhrs_to_fetch)} hours, hourly)")
 
-    # Pull all forecast hours, building a stack of 2D fields
-    log.info(f"Fetching GFS {cyc.run_str}, hours {FORECAST_HOURS}")
-    fields = {}
-    for fhr in FORECAST_HOURS:
+    log.info(f"Fetching {len(fhrs_to_fetch)} GRIB files from NOMADS...")
+    samples_by_fhr = {}
+    for fhr in fhrs_to_fetch:
         buf = fetch_grib(cyc, fhr)
-        fields[fhr] = open_grib(buf)
-        log.info(f"  f{fhr:03d}: shape={fields[fhr].shape}, "
-                 f"range=[{float(fields[fhr].min()):.1f}, {float(fields[fhr].max()):.1f}]°C")
+        da = open_grib(buf)
+        samples_by_fhr[fhr] = sample_at_cities(da, cities)
+        log.info(f"  F{fhr:03d}: range "
+                 f"[{float(da.min()):.1f}, {float(da.max()):.1f}]°C")
 
-    # Sample everything at city points
-    samples = {fhr: sample_at_cities(fields[fhr], cities) for fhr in FORECAST_HOURS}
-    sample_stack = np.stack([samples[fhr] for fhr in FORECAST_HOURS])  # (T, N)
+    # Stack: shape (n_hours, n_cities)
+    sample_stack = np.stack([samples_by_fhr[fhr] for fhr in fhrs_to_fetch])
 
-    current = samples[0]
+    current = samples_by_fhr[nowcast_fhr]
     daily_max = sample_stack.max(axis=0)
     daily_min = sample_stack.min(axis=0)
 
     clim = load_climatology(args.climatology)
-    doy = cyc.datetime_utc.timetuple().tm_yday
+    doy = nowcast_valid.timetuple().tm_yday
 
     records = build_records(cities, current, daily_max, daily_min, clim, doy)
     out = {
         "metadata": {
             "generated_at_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
             "model_run": cyc.run_str,
+            "nowcast_valid_utc": nowcast_valid.replace(microsecond=0).isoformat(),
+            "nowcast_forecast_hour": nowcast_fhr,
+            "window_hours": WINDOW_HOURS,
             "climatology_version": "ERA5 1991-2020 v1" if clim is not None else None,
             "grid_resolution_deg": 0.25,
             "synthetic": False,
             "n_cities": len(records),
-            "forecast_hours": FORECAST_HOURS,
         },
         "cities": records,
     }
