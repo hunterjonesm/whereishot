@@ -1,11 +1,44 @@
 geonames_id,name,country,lat,lon,tz
 3936456,Lima,PER,-12.046,-77.043,America/Lima
 3448439,Sao Paulo,BRA,-23.548,-46.636,America/Sao_Paulo
+3469058,Brasilia,BRA,-15.781,-47.929,America/Sao_Paulo
 3871336,Santiago,CHL,-33.459,-70.645,America/Santiago
 3435910,Buenos Aires,ARG,-34.611,-58.396,America/Argentina/Buenos_Aires
 3688689,Bogota,COL,4.711,-74.072,America/Bogota
 3646738,Caracas,VEN,10.491,-66.880,America/Caracas
 3530597,Mexico City,MEX,19.428,-99.128,America/Mexico_City
+3514783,Veracruz,MEX,19.190,-96.155,America/Mexico_City
+3981609,Cancun,MEX,21.171,-86.847,America/Cancun
+3621849,San Jose,CRI,9.934,-84.087,America/Costa_Rica
+3598132,Guatemala City,GTM,14.642,-90.513,America/Guatemala
+3583361,San Salvador,SLV,13.692,-89.218,America/El_Salvador
+3600949,Tegucigalpa,HND,14.072,-87.190,America/Tegucigalpa
+3617763,Managua,NIC,12.137,-86.273,America/Managua
+3703443,Panama City,PAN,8.998,-79.519,America/Panama
+3580661,Havana,CUB,23.135,-82.359,America/Havana
+3492908,Santo Domingo,DOM,18.473,-69.894,America/Santo_Domingo
+3717513,Port-au-Prince,HTI,18.539,-72.335,America/Port-au-Prince
+3573374,Kingston,JAM,17.997,-76.793,America/Jamaica
+3573197,Bridgetown,BRB,13.097,-59.617,America/Barbados
+3573890,Port of Spain,TTO,10.661,-61.508,America/Port_of_Spain
+3577154,Nassau,BHS,25.054,-77.346,America/Nassau
+3492914,Quito,ECU,-0.220,-78.512,America/Guayaquil
+3937513,Guayaquil,ECU,-2.190,-79.890,America/Guayaquil
+3947322,Cusco,PER,-13.526,-71.973,America/Lima
+3911925,La Paz,BOL,-16.500,-68.150,America/La_Paz
+3928128,Sucre,BOL,-19.034,-65.260,America/La_Paz
+3439389,Asuncion,PRY,-25.282,-57.635,America/Asuncion
+3441575,Montevideo,URY,-34.906,-56.190,America/Montevideo
+3429577,Cordoba,ARG,-31.413,-64.181,America/Argentina/Cordoba
+3429594,Mendoza,ARG,-32.890,-68.844,America/Argentina/Mendoza
+3879561,Valparaiso,CHL,-33.046,-71.617,America/Santiago
+3651438,Manaus,BRA,-3.118,-60.022,America/Manaus
+3463011,Curitiba,BRA,-25.428,-49.273,America/Sao_Paulo
+3451328,Rio de Janeiro,BRA,-22.907,-43.173,America/Sao_Paulo
+3393536,Recife,BRA,-8.054,-34.881,America/Recife
+3674962,Medellin,COL,6.244,-75.581,America/Bogota
+3685533,Cartagena,COL,10.391,-75.479,America/Bogota
+3633341,Maracaibo,VEN,10.654,-71.640,America/Caracas
 5128581,New York,USA,40.713,-74.006,America/New_York
 4887398,Chicago,USA,41.878,-87.630,America/Chicago
 5391959,San Francisco,USA,37.775,-122.418,America/Los_Angeles
@@ -14,93 +47,267 @@ geonames_id,name,country,lat,lon,tz
 5308655,Phoenix,USA,33.448,-112.074,America/Phoenix
 4699066,Houston,USA,29.760,-95.369,America/Chicago
 5856195,Honolulu,USA,21.307,-157.858,Pacific/Honolulu
+5879400,Anchorage,USA,61.218,-149.900,America/Anchorage
+4180439,Atlanta,USA,33.749,-84.388,America/New_York
+4259418,Indianapolis,USA,39.768,-86.158,America/Indiana/Indianapolis
+5392171,San Diego,USA,32.715,-117.157,America/Los_Angeles
+5368361,Los Angeles,USA,34.054,-118.244,America/Los_Angeles
+5746545,Portland,USA,45.523,-122.676,America/Los_Angeles
+5809844,Seattle,USA,47.606,-122.332,America/Los_Angeles
+4509177,Columbus,USA,39.961,-82.999,America/New_York
+4644585,Nashville,USA,36.166,-86.784,America/Chicago
+4355842,Baltimore,USA,39.290,-76.612,America/New_York
+4671654,Austin,USA,30.267,-97.743,America/Chicago
+4990729,Detroit,USA,42.331,-83.046,America/Detroit
+4393217,Kansas City,USA,39.099,-94.578,America/Chicago
+4276614,Wichita,USA,37.692,-97.337,America/Chicago
+4717560,San Antonio,USA,29.424,-98.494,America/Chicago
+4140963,Washington,USA,38.895,-77.037,America/New_York
+4560349,Philadelphia,USA,39.953,-75.165,America/New_York
+4930956,Boston,USA,42.358,-71.060,America/New_York
+4853828,Des Moines,USA,41.601,-93.609,America/Chicago
+4407066,St. Louis,USA,38.627,-90.200,America/Chicago
+4641239,Memphis,USA,35.149,-90.049,America/Chicago
+4154008,Jacksonville,USA,30.332,-81.656,America/New_York
+4163971,Miami,USA,25.762,-80.192,America/New_York
+4173476,Orlando,USA,28.539,-81.379,America/New_York
+4096552,Little Rock,USA,34.746,-92.289,America/Chicago
+4119403,Oklahoma City,USA,35.467,-97.516,America/Chicago
+4949752,Manchester,USA,42.991,-71.464,America/New_York
+4971068,Portland Maine,USA,43.661,-70.255,America/New_York
+4845419,Bridgeport,USA,41.187,-73.195,America/New_York
+4566996,Providence,USA,41.824,-71.413,America/New_York
+5037779,Minneapolis,USA,44.978,-93.265,America/Chicago
+5263045,Milwaukee,USA,43.039,-87.906,America/Chicago
+5224151,Pittsburgh,USA,40.441,-79.996,America/New_York
+5106834,Newark,USA,40.736,-74.172,America/New_York
+5780993,Salt Lake City,USA,40.761,-111.891,America/Denver
+5520993,Albuquerque,USA,35.085,-106.651,America/Denver
+5450438,Colorado Springs,USA,38.834,-104.821,America/Denver
+5454627,Cheyenne,USA,41.140,-104.820,America/Denver
+5585052,Boise,USA,43.614,-116.202,America/Boise
+5683085,Billings,USA,45.783,-108.501,America/Denver
+5688025,Fargo,USA,46.877,-96.789,America/Chicago
+5768244,Sioux Falls,USA,43.550,-96.728,America/Chicago
+5331835,Las Vegas,USA,36.175,-115.137,America/Los_Angeles
+4150544,Tampa,USA,27.951,-82.458,America/New_York
+4155966,Tallahassee,USA,30.438,-84.281,America/New_York
+4744709,Charleston,USA,32.776,-79.931,America/New_York
+4046704,Mobile,USA,30.694,-88.043,America/Chicago
+4331987,New Orleans,USA,29.951,-90.072,America/Chicago
 6167865,Toronto,CAN,43.700,-79.420,America/Toronto
 6173331,Vancouver,CAN,49.282,-123.120,America/Vancouver
+6077243,Montreal,CAN,45.502,-73.567,America/Montreal
+8581623,Ottawa,CAN,45.421,-75.697,America/Toronto
+5913490,Calgary,CAN,51.045,-114.057,America/Edmonton
+5946768,Edmonton,CAN,53.546,-113.491,America/Edmonton
+6094817,Quebec City,CAN,46.813,-71.208,America/Toronto
+5983720,Halifax,CAN,44.649,-63.594,America/Halifax
+6324729,Winnipeg,CAN,49.900,-97.139,America/Winnipeg
 2643743,London,GBR,51.508,-0.126,Europe/London
+2655603,Birmingham GB,GBR,52.482,-1.890,Europe/London
+2643123,Manchester GB,GBR,53.481,-2.237,Europe/London
+2650225,Edinburgh,GBR,55.953,-3.188,Europe/London
 2988507,Paris,FRA,48.857,2.351,Europe/Paris
+2995469,Marseille,FRA,43.297,5.381,Europe/Paris
 2950158,Berlin,DEU,52.520,13.405,Europe/Berlin
+2867714,Munich,DEU,48.137,11.575,Europe/Berlin
+2911298,Hamburg,DEU,53.551,9.993,Europe/Berlin
+2925533,Frankfurt,DEU,50.111,8.682,Europe/Berlin
 3169070,Rome,ITA,41.892,12.482,Europe/Rome
+3173435,Milan,ITA,45.464,9.190,Europe/Rome
+3172394,Naples,ITA,40.853,14.305,Europe/Rome
 3117735,Madrid,ESP,40.417,-3.704,Europe/Madrid
+3128760,Barcelona,ESP,41.385,2.173,Europe/Madrid
+2509954,Valencia,ESP,39.469,-0.376,Europe/Madrid
 2673730,Stockholm,SWE,59.329,18.069,Europe/Stockholm
+3143244,Oslo,NOR,59.913,10.739,Europe/Oslo
+2618425,Copenhagen,DNK,55.676,12.568,Europe/Copenhagen
+2673722,Helsinki,FIN,60.171,24.941,Europe/Helsinki
+3413829,Reykjavik,ISL,64.135,-21.895,Atlantic/Reykjavik
 524901,Moscow,RUS,55.756,37.617,Europe/Moscow
+498817,Saint Petersburg,RUS,59.939,30.316,Europe/Moscow
 745044,Istanbul,TUR,41.013,28.949,Europe/Istanbul
+323786,Ankara,TUR,39.920,32.854,Europe/Istanbul
 785842,Athens,GRC,37.984,23.728,Europe/Athens
 3067696,Prague,CZE,50.088,14.421,Europe/Prague
 756135,Warsaw,POL,52.230,21.012,Europe/Warsaw
 2759794,Amsterdam,NLD,52.374,4.889,Europe/Amsterdam
+2800866,Brussels,BEL,50.851,4.348,Europe/Brussels
 2761369,Vienna,AUT,48.208,16.373,Europe/Vienna
-2673722,Helsinki,FIN,60.171,24.941,Europe/Helsinki
-3413829,Reykjavik,ISL,64.135,-21.895,Atlantic/Reykjavik
+2658822,Zurich,CHE,47.377,8.541,Europe/Zurich
+2660646,Geneva,CHE,46.204,6.143,Europe/Zurich
 2964574,Dublin,IRL,53.349,-6.260,Europe/Dublin
-2618425,Copenhagen,DNK,55.676,12.568,Europe/Copenhagen
 2267057,Lisbon,PRT,38.722,-9.139,Europe/Lisbon
+3054643,Budapest,HUN,47.498,19.040,Europe/Budapest
+683506,Bucharest,ROU,44.432,26.103,Europe/Bucharest
+727011,Sofia,BGR,42.697,23.322,Europe/Sofia
+792680,Belgrade,SRB,44.804,20.465,Europe/Belgrade
+3196359,Ljubljana,SVN,46.051,14.506,Europe/Ljubljana
+3186886,Zagreb,HRV,45.815,15.978,Europe/Zagreb
+792578,Skopje,MKD,41.996,21.432,Europe/Skopje
+3193935,Sarajevo,BIH,43.847,18.357,Europe/Sarajevo
+3193044,Podgorica,MNE,42.442,19.262,Europe/Podgorica
+3183875,Tirana,ALB,41.328,19.819,Europe/Tirane
+3041563,Andorra la Vella,AND,42.507,1.521,Europe/Andorra
+2960313,Luxembourg,LUX,49.611,6.130,Europe/Luxembourg
+593116,Vilnius,LTU,54.687,25.279,Europe/Vilnius
+456172,Riga,LVA,56.946,24.106,Europe/Riga
+588409,Tallinn,EST,59.437,24.745,Europe/Tallinn
+625144,Minsk,BLR,53.902,27.561,Europe/Minsk
+703448,Kyiv,UKR,50.450,30.524,Europe/Kyiv
+618426,Chisinau,MDA,47.011,28.864,Europe/Chisinau
+616051,Yerevan,ARM,40.179,44.499,Asia/Yerevan
+587084,Baku,AZE,40.410,49.867,Asia/Baku
+611717,Tbilisi,GEO,41.716,44.783,Asia/Tbilisi
 360630,Cairo,EGY,30.044,31.236,Africa/Cairo
+361058,Alexandria,EGY,31.198,29.918,Africa/Cairo
 2332459,Lagos,NGA,6.524,3.379,Africa/Lagos
+2352778,Abuja,NGA,9.077,7.398,Africa/Lagos
 993800,Johannesburg,ZAF,-26.205,28.050,Africa/Johannesburg
 3369157,Cape Town,ZAF,-33.925,18.424,Africa/Johannesburg
+953987,Pretoria,ZAF,-25.745,28.188,Africa/Johannesburg
+1007311,Durban,ZAF,-29.858,31.022,Africa/Johannesburg
 184745,Nairobi,KEN,-1.292,36.822,Africa/Nairobi
+186301,Mombasa,KEN,-4.043,39.668,Africa/Nairobi
 344979,Addis Ababa,ETH,9.025,38.747,Africa/Addis_Ababa
 2542997,Casablanca,MAR,33.589,-7.603,Africa/Casablanca
 2542543,Marrakech,MAR,31.629,-7.981,Africa/Casablanca
+2538475,Rabat,MAR,34.014,-6.833,Africa/Casablanca
 2464470,Tunis,TUN,36.806,10.181,Africa/Tunis
 2464461,Algiers,DZA,36.737,3.087,Africa/Algiers
+2473494,Tripoli,LBY,32.887,13.191,Africa/Tripoli
 379252,Khartoum,SDN,15.501,32.560,Africa/Khartoum
 2253354,Dakar,SEN,14.694,-17.444,Africa/Dakar
 2287781,Abidjan,CIV,5.359,-4.008,Africa/Abidjan
 2306104,Accra,GHA,5.560,-0.205,Africa/Accra
 160263,Dar es Salaam,TZA,-6.792,39.208,Africa/Dar_es_Salaam
+160196,Dodoma,TZA,-6.173,35.742,Africa/Dar_es_Salaam
 232422,Kampala,UGA,0.314,32.581,Africa/Kampala
 2314302,Kinshasa,COD,-4.325,15.322,Africa/Kinshasa
+2310490,Lubumbashi,COD,-11.661,27.479,Africa/Lubumbashi
 890299,Harare,ZWE,-17.829,31.054,Africa/Harare
 1040652,Maputo,MOZ,-25.966,32.568,Africa/Maputo
 3354077,Windhoek,NAM,-22.560,17.084,Africa/Windhoek
+933773,Gaborone,BWA,-24.654,25.908,Africa/Gaborone
+2300372,Lome,TGO,6.131,1.222,Africa/Lome
+2392087,Porto-Novo,BEN,6.498,2.605,Africa/Porto-Novo
+2347283,Niamey,NER,13.512,2.112,Africa/Niamey
+2460596,Bamako,MLI,12.639,-8.003,Africa/Bamako
+2422465,Conakry,GIN,9.535,-13.679,Africa/Conakry
+2410763,Freetown,SLE,8.484,-13.234,Africa/Freetown
+2274895,Monrovia,LBR,6.301,-10.798,Africa/Monrovia
+2377450,Nouakchott,MRT,18.086,-15.975,Africa/Nouakchott
+2399697,Libreville,GAB,0.391,9.454,Africa/Libreville
+2260535,Brazzaville,COG,-4.263,15.243,Africa/Brazzaville
+2233415,Yaounde,CMR,3.867,11.517,Africa/Douala
+2220957,Douala,CMR,4.051,9.708,Africa/Douala
+240210,Bangui,CAF,4.394,18.557,Africa/Bangui
+2245450,Bissau,GNB,11.864,-15.598,Africa/Bissau
+424028,Kigali,RWA,-1.944,30.062,Africa/Kigali
+425378,Bujumbura,BDI,-3.383,29.359,Africa/Bujumbura
+383369,Juba,SSD,4.854,31.582,Africa/Juba
+51537,Mogadishu,SOM,2.046,45.318,Africa/Mogadishu
+338633,Asmara,ERI,15.339,38.932,Africa/Asmara
+223817,Djibouti City,DJI,11.588,43.145,Africa/Djibouti
+1070940,Antananarivo,MDG,-18.879,47.508,Indian/Antananarivo
+934154,Port Louis,MUS,-20.166,57.502,Indian/Mauritius
+934987,Mbabane,SWZ,-26.318,31.140,Africa/Mbabane
+932505,Maseru,LSO,-29.317,27.483,Africa/Maseru
+2440485,N'Djamena,TCD,12.107,15.045,Africa/Ndjamena
 292223,Dubai,ARE,25.205,55.271,Asia/Dubai
+292968,Abu Dhabi,ARE,24.466,54.367,Asia/Dubai
 108410,Riyadh,SAU,24.713,46.675,Asia/Riyadh
+105343,Jeddah,SAU,21.543,39.173,Asia/Riyadh
 281184,Jerusalem,ISR,31.769,35.214,Asia/Jerusalem
+293397,Tel Aviv,ISR,32.084,34.788,Asia/Jerusalem
 250441,Amman,JOR,31.956,35.945,Asia/Amman
 276781,Beirut,LBN,33.889,35.495,Asia/Beirut
+170654,Damascus,SYR,33.513,36.292,Asia/Damascus
 98182,Baghdad,IRQ,33.341,44.401,Asia/Baghdad
 112931,Tehran,IRN,35.689,51.389,Asia/Tehran
+118743,Mashhad,IRN,36.298,59.606,Asia/Tehran
 290030,Doha,QAT,25.286,51.531,Asia/Qatar
 285787,Kuwait City,KWT,29.378,47.991,Asia/Kuwait
+286245,Muscat,OMN,23.614,58.546,Asia/Muscat
+290340,Manama,BHR,26.222,50.582,Asia/Bahrain
+71137,Sanaa,YEM,15.369,44.191,Asia/Aden
+1138958,Kabul,AFG,34.526,69.176,Asia/Kabul
 1275339,Mumbai,IND,19.076,72.878,Asia/Kolkata
 1273294,Delhi,IND,28.704,77.103,Asia/Kolkata
 1264527,Chennai,IND,13.083,80.270,Asia/Kolkata
 1275004,Kolkata,IND,22.572,88.364,Asia/Kolkata
 1277333,Bangalore,IND,12.972,77.594,Asia/Kolkata
+1269843,Hyderabad,IND,17.385,78.487,Asia/Kolkata
+1259229,Pune,IND,18.520,73.857,Asia/Kolkata
+1279233,Ahmedabad,IND,23.026,72.588,Asia/Kolkata
 1176615,Karachi,PAK,24.861,67.010,Asia/Karachi
+1172451,Lahore,PAK,31.558,74.351,Asia/Karachi
+1166993,Islamabad,PAK,33.694,73.084,Asia/Karachi
 1185241,Dhaka,BGD,23.811,90.413,Asia/Dhaka
+1185137,Chittagong,BGD,22.336,91.832,Asia/Dhaka
 1283240,Kathmandu,NPL,27.717,85.324,Asia/Kathmandu
+1252416,Thimphu,BTN,27.473,89.639,Asia/Thimphu
 1248991,Colombo,LKA,6.932,79.858,Asia/Colombo
 1880252,Singapore,SGP,1.290,103.852,Asia/Singapore
 1735161,Kuala Lumpur,MYS,3.139,101.687,Asia/Kuala_Lumpur
+1733038,Kota Kinabalu,MYS,5.978,116.072,Asia/Kuching
 1609350,Bangkok,THA,13.756,100.502,Asia/Bangkok
+1605239,Chiang Mai,THA,18.787,98.993,Asia/Bangkok
 1581130,Hanoi,VNM,21.028,105.804,Asia/Ho_Chi_Minh
 1566083,Ho Chi Minh City,VNM,10.823,106.630,Asia/Ho_Chi_Minh
 1642911,Jakarta,IDN,-6.211,106.845,Asia/Jakarta
+1645528,Surabaya,IDN,-7.250,112.751,Asia/Jakarta
 1701668,Manila,PHL,14.599,120.984,Asia/Manila
+1717512,Davao,PHL,7.073,125.613,Asia/Manila
 1821306,Phnom Penh,KHM,11.563,104.916,Asia/Phnom_Penh
+1652484,Vientiane,LAO,17.967,102.600,Asia/Vientiane
+1298824,Yangon,MMR,16.806,96.156,Asia/Yangon
+1311874,Naypyidaw,MMR,19.745,96.115,Asia/Yangon
+1733046,Bandar Seri Begawan,BRN,4.890,114.942,Asia/Brunei
+1880738,Dili,TLS,-8.557,125.578,Asia/Dili
 1850147,Tokyo,JPN,35.690,139.692,Asia/Tokyo
 1853909,Osaka,JPN,34.694,135.502,Asia/Tokyo
+2128295,Sapporo,JPN,43.064,141.347,Asia/Tokyo
+1862415,Fukuoka,JPN,33.590,130.402,Asia/Tokyo
 1835848,Seoul,KOR,37.566,126.978,Asia/Seoul
+1838524,Busan,KOR,35.180,129.075,Asia/Seoul
 1816670,Beijing,CHN,39.905,116.397,Asia/Shanghai
 1796236,Shanghai,CHN,31.230,121.474,Asia/Shanghai
 1809858,Guangzhou,CHN,23.129,113.264,Asia/Shanghai
 1815286,Chongqing,CHN,29.563,106.551,Asia/Shanghai
+1797121,Shenzhen,CHN,22.543,114.058,Asia/Shanghai
+1814991,Chengdu,CHN,30.667,104.067,Asia/Shanghai
 1819729,Hong Kong,HKG,22.302,114.177,Asia/Hong_Kong
 1668341,Taipei,TWN,25.033,121.565,Asia/Taipei
 2028462,Ulaanbaatar,MNG,47.886,106.906,Asia/Ulaanbaatar
+1873107,Pyongyang,PRK,39.039,125.762,Asia/Pyongyang
 2147714,Sydney,AUS,-33.868,151.207,Australia/Sydney
 2158177,Melbourne,AUS,-37.814,144.963,Australia/Melbourne
 2174003,Brisbane,AUS,-27.470,153.025,Australia/Brisbane
 2063523,Perth,AUS,-31.953,115.857,Australia/Perth
 2078025,Adelaide,AUS,-34.929,138.601,Australia/Adelaide
+2073124,Darwin,AUS,-12.461,130.842,Australia/Darwin
+2172517,Canberra,AUS,-35.282,149.129,Australia/Sydney
 2179537,Auckland,NZL,-36.848,174.763,Pacific/Auckland
 2179670,Wellington,NZL,-41.286,174.776,Pacific/Auckland
+2192362,Christchurch,NZL,-43.532,172.636,Pacific/Auckland
+2110257,Suva,FJI,-18.141,178.442,Pacific/Fiji
+2088122,Port Moresby,PNG,-9.443,147.181,Pacific/Port_Moresby
+2139521,Honiara,SLB,-9.428,159.957,Pacific/Guadalcanal
+2134431,Port Vila,VUT,-17.734,168.322,Pacific/Efate
+4044012,Hagatna,GUM,13.470,144.748,Pacific/Guam
 2013348,Vladivostok,RUS,43.117,131.900,Asia/Vladivostok
 1502026,Novosibirsk,RUS,55.041,82.934,Asia/Novosibirsk
 1486209,Yekaterinburg,RUS,56.838,60.605,Asia/Yekaterinburg
+1496153,Irkutsk,RUS,52.297,104.296,Asia/Irkutsk
 1526384,Almaty,KAZ,43.255,76.913,Asia/Almaty
+1526273,Astana,KAZ,51.180,71.446,Asia/Almaty
 1217752,Tashkent,UZB,41.299,69.240,Asia/Tashkent
+1213855,Bishkek,KGZ,42.874,74.612,Asia/Bishkek
+1220378,Dushanbe,TJK,38.560,68.787,Asia/Dushanbe
+162183,Ashgabat,TKM,37.960,58.326,Asia/Ashgabat
 3833367,Ushuaia,ARG,-54.802,-68.303,America/Argentina/Ushuaia
-5879400,Anchorage,USA,61.218,-149.900,America/Anchorage
+6620339,Longyearbyen,SJM,78.221,15.633,Arctic/Longyearbyen
+3426691,Nuuk,GRL,64.183,-51.722,America/Nuuk
+6535965,Murmansk,RUS,68.969,33.075,Europe/Moscow

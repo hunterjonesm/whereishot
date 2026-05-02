@@ -1,0 +1,15 @@
+title: Where is it hot
+description: ClimaHealth/GHHIN heat extremes prototype
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - docs
+exclude:
+  - climatology/build_climatology.ipynb
+  - pipeline/
+  - data/generate_synthetic.py
+  - .github/
+  - "*.zip"

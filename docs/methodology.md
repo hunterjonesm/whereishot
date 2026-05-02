@@ -1,40 +1,74 @@
+---
+layout: default
+title: Methodology
+---
+
 # Methodology — "Where is it hot"
 
-This page describes how each of the four heat metrics on the map is computed, and what assumptions we are making.
+This page describes how each metric is computed, the assumptions involved, and the limitations users should be aware of.
 
 ## Data sources
 
-**Live temperature data** — National Oceanic and Atmospheric Administration (NOAA) Global Forecast System, 0.25° global grid. We pull the latest available cycle (00, 06, 12, or 18 UTC) from NOAA NOMADS, including the analysis (F000) and forecast hours F003 through F024 in three-hour steps.
+**Live temperature data.** NOAA Global Forecast System (GFS) at 0.25° resolution. The pipeline pulls the four most recent cycles available on NOMADS — the latest analysis plus the three prior — and assembles a continuous hourly time series of forecast 2-metre air temperature spanning roughly fifty hours of UTC. This is enough to fully cover any city's local calendar day from any moment the pipeline runs, including cities near the dateline.
 
-**Climatology** — European Centre for Medium-Range Weather Forecasts (ECMWF) ERA5 reanalysis, daily-mean 2-metre temperature, 1991–2020. Computed in Google Earth Engine using a 15-day centered window per day of year, sampled at each city's location.
+**Climatology.** ECMWF ERA5 reanalysis daily-mean 2-metre temperature for 1991–2020, sampled at each city's grid cell using Google Earth Engine. The detrended-σ method (described below) is applied to compute the per-day-of-year distribution.
 
-**Cities** — GeoNames cities15000 (CC-BY 4.0). The list is curated to ~100 globally distributed major cities for the prototype.
+**Cities.** ~310 globally distributed major cities, sourced from GeoNames (CC-BY 4.0). Each city carries a stable GeoNames ID, lat/lon, and IANA timezone identifier.
+
+## How "current" is computed
+
+The pipeline runs every six hours. On each run, it fetches every hourly forecast from the four most recent GFS cycles and emits, for each city, a list of (UTC valid time, temperature) pairs spanning roughly the last two hours through the next eighteen hours.
+
+When you load the page in your browser, the frontend selects, for each city, the hourly sample whose UTC valid time is closest to your wall clock at that moment. This means displayed "current temperature" is always within thirty minutes of true now — even if the pipeline last ran several hours ago. The leaderboard re-runs this selection every five minutes so a tab left open updates automatically.
+
+This design is the reason the pipeline only needs to run four times per day. The "current" view is computed on demand by the browser; the pipeline's job is just to keep the underlying forecast data fresh.
 
 ## The four metrics
 
 ### Current temperature
-The 2-metre air temperature from the most recent GFS analysis, sampled at each city's grid cell using nearest-neighbor lookup. This is the model's best estimate of present conditions, available within roughly four hours of the cycle time.
 
-### Anomaly vs. climatology (percentile)
-For each city, we compare the current temperature against the day-of-year climatology distribution and report a percentile. The percentile is computed as Φ((x − μ)/σ), where μ and σ are the climatological mean and standard deviation for the surrounding 15-day window in 1991–2020, and Φ is the standard normal cumulative distribution. A reading at the 95th percentile means the current temperature is exceeded only 5% of the time at this location during this part of the year, in the climatological record.
+The hourly forecast valid closest to your current moment, sampled at the city's grid cell using nearest-neighbor lookup.
 
-### Daily maximum / minimum
-The maximum (or minimum) of the analysis-plus-forecast temperature stack from F000 through F024, sampled in three-hour steps. This represents the warmest (or coolest) point in the next 24 hours, including the present moment.
+### Today vs. historical normal
 
-## Limitations and caveats
+This is the climatology comparison. It works as follows.
 
-Two practical and one philosophical caveat to keep in mind:
+For each city, we take all hourly forecasts whose valid time falls within "today" in that city's local timezone — from local midnight to local midnight. We average those hourly values to obtain today's *daily mean* temperature. We then compare that daily mean to the climatological distribution of daily-mean temperatures for the same calendar day, using a fifteen-day centered window in the 1991–2020 reference period.
 
-GFS analysis is a model estimate, not a station observation. It assimilates observations but the value at any specific point reflects the model's view, not a thermometer reading. For most public-information uses this is appropriate; for record-checking, station data should be consulted.
+The reported number is the percentile rank, computed as Φ((today − μ)/σ) where Φ is the standard normal cumulative distribution function. A value of 95 means today's daily mean is exceeded only 5% of the time at this city for this part of the year, in the climatological record.
 
-Climatology is computed from ERA5 daily-mean temperature, while the live signal is a point-in-time reading from GFS. These are not identical quantities, but they share the same day-of-year structure, so the percentile rank remains a meaningful indicator of how unusual current conditions are. We are not claiming an absolute calibration between the two products.
+The comparison is apples-to-apples: daily-mean today vs. daily-mean climatology. An earlier prototype version compared instantaneous current temperature to daily-mean climatology, which was biased by local time of day; that has been corrected.
 
-The Gaussian percentile fit is convenient and stable but understates the true frequency of extreme values in the tails. For tail-sensitive uses, the underlying climatology parquet also exposes empirical 95th and 99th percentiles for the same window.
+### Daily maximum and minimum
+
+The highest (or lowest) hourly forecast value within today, where "today" means local midnight to local midnight in the city's IANA timezone. This matches the WMO convention for daily extremes, and means Tokyo's "today" can span entirely different UTC hours than Geneva's.
+
+## The detrended-σ climatology
+
+A naive approach to climatological standard deviation is to take all daily-mean values from a fifteen-day window across thirty years and compute σ directly. This works in deep summer or deep winter, when temperatures are relatively stable across the window, but it overestimates σ during the equinoxes when the seasonal cycle is rising or falling rapidly within the window itself.
+
+The method we use instead — sometimes called the "anomaly method" — is:
+
+1. For each city, fit a smooth seasonal cycle to the full thirty-year record. We use a Fourier series with four harmonics, which is sufficient to capture the annual and semi-annual structure without overfitting.
+2. Subtract the fitted seasonal cycle from each daily observation to obtain anomalies.
+3. The climatological σ for any given day-of-year is then the standard deviation of those anomalies within the fifteen-day window.
+
+This separates the seasonal variation (which is captured cleanly by the smooth fit) from interannual variability (which is what σ should actually measure). The resulting σ is much more stable across the calendar year, and the percentile rankings near equinoxes are no longer biased.
+
+## Limitations
+
+Three caveats worth knowing.
+
+GFS forecasts are model output, not observations. They assimilate observations but the value at any specific grid cell reflects the model's view of conditions, not a thermometer reading. For most public-information uses this is appropriate; for record-checking against specific weather stations, station data should be consulted.
+
+The percentile metric assumes a Gaussian distribution of daily-mean anomalies, parameterized by the climatological mean and detrended σ. This is generally a reasonable assumption for daily means (less so for daily maxima or minima), but it understates the true frequency of extreme tails. For tail-sensitive uses, the underlying climatology table also exposes empirical 95th and 99th percentiles for the same window.
+
+The city list is curated, not exhaustive. ~310 cities cover all UN member states and major regional centers, but smaller cities and rural locations are absent. Adding cities is straightforward and documented in the repository.
 
 ## Update cadence
 
-The live data refreshes every three hours, around 4, 7, 10, 13, 16, 19, 22, and 1 UTC, scheduled to run roughly an hour after each new GFS cycle becomes available. The "last updated" timestamp on the map header reflects the most recent successful pipeline run.
+The pipeline runs at 05:13, 11:13, 17:13, and 23:13 UTC — five hours after each GFS cycle becomes available, which gives the cycle plenty of time to fully publish on NOMADS. The "Current temperature" displayed in your browser is selected dynamically and is always within thirty minutes of your wall clock; the underlying forecast data never goes more than six hours out of date.
 
 ## Reproducibility
 
-This product is built end-to-end from open code and public data. The pipeline source, climatology notebook, and data outputs are all in the public repository. Each published `cities_live.json` carries the GFS cycle identifier and climatology version in its metadata block, providing the version pinning required by the Terms of Reference.
+The product is built end-to-end from open code and public data. Pipeline source, climatology notebook, and data outputs are all in the public repository. Each published `cities_live.json` carries the GFS cycle identifier, climatology version, and pipeline timestamp in its metadata block.

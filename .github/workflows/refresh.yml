@@ -2,24 +2,23 @@ name: Refresh heat map data
 
 on:
   schedule:
-    # Hourly. The fetcher always picks the latest *available* GFS cycle and
-    # the forecast hour whose valid time is closest to clock-now, so an
-    # hourly cron means displayed data is never more than ~60 minutes stale.
-    - cron: '13 * * * *'
-  workflow_dispatch:  # manual trigger button in the Actions UI
+    # 4 runs/day, scheduled 5 hours after each 6-hourly GFS cycle.
+    # The frontend picks the appropriate forecast hour client-side, so we
+    # only need a fresh fetch per cycle (every 6 h), not per hour.
+    - cron: '13 5,11,17,23 * * *'
+  workflow_dispatch:
 
-# Prevent overlapping runs (a slow run shouldn't be lapped by the next cron)
 concurrency:
   group: refresh-data
   cancel-in-progress: false
 
 permissions:
-  contents: write   # to commit updated data file back to the repo
+  contents: write
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
 
     steps:
       - name: Checkout repo
@@ -40,7 +39,7 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r pipeline/requirements.txt
 
-      - name: Fetch latest GFS cycle and write cities_live.json
+      - name: Fetch GFS cycles and write cities_live.json
         run: |
           python pipeline/fetch_gfs.py \
             --cities pipeline/cities.csv \
@@ -59,7 +58,7 @@ jobs:
             git push
           fi
 
-      - name: Upload data as artifact (debug aid for failed runs)
+      - name: Upload data as artifact (debug aid)
         if: always()
         uses: actions/upload-artifact@v5
         with:
