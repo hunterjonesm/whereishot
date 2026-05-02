@@ -5,7 +5,7 @@ on:
     # Hourly. The fetcher always picks the latest *available* GFS cycle and
     # the forecast hour whose valid time is closest to clock-now, so an
     # hourly cron means displayed data is never more than ~60 minutes stale.
-    - cron: '15 * * * *'
+    - cron: '13 * * * *'
   workflow_dispatch:  # manual trigger button in the Actions UI
 
 # Prevent overlapping runs (a slow run shouldn't be lapped by the next cron)
@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Install eccodes (required for GRIB2 reading)
         run: |
@@ -61,7 +61,7 @@ jobs:
 
       - name: Upload data as artifact (debug aid for failed runs)
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: cities_live-${{ github.run_number }}
           path: data/cities_live.json
